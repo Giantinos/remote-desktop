@@ -1,0 +1,58 @@
+#ifndef SESSIONMANAGER_H
+#define SESSIONMANAGER_H
+
+#include <QObject>
+#include "senderclient.h"
+#include "receiverobject.h"
+
+class SessionManager : public QObject
+{
+    Q_OBJECT
+public:
+    explicit SessionManager(SenderClient *senderClient,
+                            ReceiverObject *receiverObject,
+                            QObject *parent = nullptr,
+                            QTextEdit *textWidget = nullptr,
+                            QPushButton *sendMessageButton = nullptr,
+                            QPushButton *setParametersButton = nullptr,
+                            QPushButton *connectToServerButton = nullptr,
+                            QPushButton *disconnectFromServerButton = nullptr,
+                            QPushButton *disconnectClientButton = nullptr,
+                            QPushButton *startServerButton = nullptr,
+                            QPushButton *stopServerButton = nullptr
+                            );
+public slots:
+    void onServerStarted();
+    void onServerStopped();
+    void onServerHaveAConnection();
+    void onClientConnected();
+    void onClientDisconnected();
+    void onValidClientSettings();
+    void onInvalidClientSettings();
+
+    // void onParametersChanged();
+
+private:
+    SenderClient *senderClient;
+    ReceiverObject *receiverObject;
+//  == Messaging
+    QTextEdit *textWidget;
+//  == Buttons ==
+    QPushButton *sendMessageButton;
+    QPushButton *setParametersButton;
+    QPushButton *connectToServerButton;
+    QPushButton *disconnectFromServerButton;
+    QPushButton *disconnectClientButton;
+    QPushButton *startServerButton;
+    QPushButton *stopServerButton;
+//  == Methods ==
+    void disableButton(QPushButton *button, QString buttonName);
+    void enableButton(QPushButton *button, QString buttonName);
+    void updateUiState();
+
+
+signals:
+    void Error(QString message);
+};
+
+#endif // SESSIONMANAGER_H

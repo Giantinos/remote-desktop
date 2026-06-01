@@ -1,0 +1,9 @@
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/Ardis.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/edit_cache.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/rebuild_cache.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/list_install_components.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/install.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/install/local.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/install/strip.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/Ardis_autogen_timestamp_deps.dir
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/Ardis_autogen.dir
