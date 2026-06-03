@@ -126,7 +126,7 @@ QString SenderClient::getErrorMessage(){
 void SenderClient::onSocketError(QAbstractSocket::SocketError socketError) {
     Q_UNUSED(socketError);
     errorMessage = QString("Ошибка сокета: %1").arg(socket->errorString());
-    connectionStatus = ClientState::ERROR;
+    connectionStatus = ClientState::C_ERROR;
     emit connectionStatusChanged(connectionStatus);
     emit warning(QString("Socker error %1").arg(socket->errorString()));
 }

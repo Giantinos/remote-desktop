@@ -69,7 +69,7 @@ enum ClientState{
     DISCONNECTED,
     CONNECTING,
     CONNECTED,
-    ERROR
+    C_ERROR
 };
 
 #endif // SENDERCLIENT_H

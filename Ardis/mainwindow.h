@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
 #include "senderclient.h"
 #include "receiverobject.h"
+#include <QMainWindow>
 #include "sessionmanager.h"
 
 QT_BEGIN_NAMESPACE

@@ -47,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->label_serverStatus->setText(message);
     });
     // ---- Warnings ----
-    ui->label_serverStatus->setText(receiverObject->getServerStatus());
+    ui->label_serverStatus->setText(receiverObject->getStringServerStatus());
     connect(receiverObject, &ReceiverObject::warning, this, [this](QString message){
         QMessageBox::warning(this, "Warning", message);
     });

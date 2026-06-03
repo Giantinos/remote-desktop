@@ -20,7 +20,8 @@ public:
     void setPort(int port);
     void stopServer();
     void disconnectClient();
-    QString getServerStatus();
+    int getServerStatus();
+    QString getStringServerStatus();
 
 private slots:
     void onNewConnection();
@@ -33,7 +34,7 @@ private:
     bool isCorrectPort();
     bool isCorrectPort(int port);
     QTcpServer *server;
-    QString serverStatus;
+    int serverStatus;
     QTcpSocket *client;
 
 signals:
@@ -41,11 +42,11 @@ signals:
     void warning(QString message);
 };
 
-enum StatusConnectionStatus{
+enum ConnectionStatus{
     SERVER_STOPPED,
     SERVER_STARTED,
-    ON_CONNECTED_CLIENT,
-    ON_ERROR
+    CLIENT_CONNECTED,
+    S_ERROR
 };
 
 #endif // RECEIVEROBJECT_H
