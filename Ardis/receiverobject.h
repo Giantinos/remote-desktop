@@ -41,4 +41,11 @@ signals:
     void warning(QString message);
 };
 
+enum StatusConnectionStatus{
+    SERVER_STOPPED,
+    SERVER_STARTED,
+    ON_CONNECTED_CLIENT,
+    ON_ERROR
+};
+
 #endif // RECEIVEROBJECT_H

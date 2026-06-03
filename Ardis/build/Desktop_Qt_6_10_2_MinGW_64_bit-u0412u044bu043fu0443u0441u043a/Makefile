@@ -296,30 +296,6 @@ receiverobject.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverobject.cpp.s
 .PHONY : receiverobject.cpp.s
 
-receiverwidget.obj: receiverwidget.cpp.obj
-.PHONY : receiverwidget.obj
-
-# target to build an object file
-receiverwidget.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.obj
-.PHONY : receiverwidget.cpp.obj
-
-receiverwidget.i: receiverwidget.cpp.i
-.PHONY : receiverwidget.i
-
-# target to preprocess a source file
-receiverwidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.i
-.PHONY : receiverwidget.cpp.i
-
-receiverwidget.s: receiverwidget.cpp.s
-.PHONY : receiverwidget.s
-
-# target to generate assembly for a file
-receiverwidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.s
-.PHONY : receiverwidget.cpp.s
-
 senderclient.obj: senderclient.cpp.obj
 .PHONY : senderclient.obj
 
@@ -395,9 +371,6 @@ help:
 	@echo ... receiverobject.obj
 	@echo ... receiverobject.i
 	@echo ... receiverobject.s
-	@echo ... receiverwidget.obj
-	@echo ... receiverwidget.i
-	@echo ... receiverwidget.s
 	@echo ... senderclient.obj
 	@echo ... senderclient.i
 	@echo ... senderclient.s

@@ -29,7 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
 
-        receiverwidget.h receiverwidget.cpp
+
         senderclient.h senderclient.cpp
         receiverobject.h receiverobject.cpp
         sessionmanager.h sessionmanager.cpp

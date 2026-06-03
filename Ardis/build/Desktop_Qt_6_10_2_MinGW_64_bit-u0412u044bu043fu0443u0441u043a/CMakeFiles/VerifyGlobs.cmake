@@ -57,7 +57,6 @@ set(OLD_GLOB
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp"
   )
@@ -84,7 +83,6 @@ set(OLD_GLOB
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h"
   )

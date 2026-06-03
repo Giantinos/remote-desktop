@@ -12,8 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Ardis.dir/mainwindow.cpp.obj.d"
   "CMakeFiles/Ardis.dir/receiverobject.cpp.obj"
   "CMakeFiles/Ardis.dir/receiverobject.cpp.obj.d"
-  "CMakeFiles/Ardis.dir/receiverwidget.cpp.obj"
-  "CMakeFiles/Ardis.dir/receiverwidget.cpp.obj.d"
   "CMakeFiles/Ardis.dir/senderclient.cpp.obj"
   "CMakeFiles/Ardis.dir/senderclient.cpp.obj.d"
   "CMakeFiles/Ardis.dir/sessionmanager.cpp.obj"

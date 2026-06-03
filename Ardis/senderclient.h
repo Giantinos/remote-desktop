@@ -65,14 +65,11 @@ signals:
     void clientEvent(const QString message);
 };
 
-enum ClientConnectionStatus{
+enum ClientState{
     DISCONNECTED,
+    CONNECTING,
     CONNECTED,
-    TRYING_TO_CONNECT,
-    DISCONNECTNG,
-    CONNECTION_FALED,
-    SOCKET_ERROR,
-    ON_CONNECTION_TIMEOUT
+    ERROR
 };
 
 #endif // SENDERCLIENT_H

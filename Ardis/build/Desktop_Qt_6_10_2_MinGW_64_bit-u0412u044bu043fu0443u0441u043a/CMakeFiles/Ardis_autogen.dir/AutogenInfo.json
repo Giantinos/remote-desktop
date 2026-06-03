@@ -425,12 +425,6 @@
 			null
 		],
 		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h",
-			"MU",
-			"EWIEGA46WW/moc_receiverwidget.cpp",
-			null
-		],
-		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h",
 			"MU",
 			"EWIEGA46WW/moc_senderclient.cpp",
@@ -525,11 +519,6 @@
 		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.cpp",
 			"MU",
 			null
 		],

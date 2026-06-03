@@ -3,20 +3,17 @@
 SenderClient::SenderClient(QWidget *parent) : QObject(parent)
 {
     socket = new QTcpSocket(this);
-    connectionStatus = ClientConnectionStatus::DISCONNECTED;
+    connectionStatus = ClientState::DISCONNECTED;
 }
 
 QString SenderClient::getStringConnectionStatus(){
     QString status;
     switch(connectionStatus){
     case 0: status = "Disconnected"; break;
-    case 1: status = "Connected"; break;
-    case 2: status = "Trying to connect"; break;
-        // добавить отображение таймаута
-    case 3: status = "Disconnecting"; break;
-    case 4: status = "Connection failed"; break;
-    case 5: status = "Socket error"; break;
-    case 6: status = "Connection timeout"; break;
+    case 1: status = "Connecting"; break;
+    case 2: status = "Connected"; break;
+    case 3: status = "Connection failed"; break;
+    case 4: status = "Error"; break;
     }
     return status;
 }
@@ -39,16 +36,16 @@ void SenderClient::connectToHost(){
 
     socket->connectToHost(hostAddress, hostPort);
 
-    connectionStatus = ClientConnectionStatus::TRYING_TO_CONNECT;
+    connectionStatus = ClientState::CONNECTING;
     connectionStatusChanged(connectionStatus);
 
     // Ожидаем подключения, но с таймаутом
     if (!socket->waitForConnected(CONNECTION_TIMEOUT)) {
-        connectionStatus = ClientConnectionStatus::ON_CONNECTION_TIMEOUT;
+        connectionStatus = ClientState::DISCONNECTED;
         emit connectionStatusChanged(connectionStatus);
-        emit warning(getStringConnectionStatus());
+        emit warning(QString("Connection timeout"));
     } else {
-        connectionStatus = ClientConnectionStatus::CONNECTED;
+        connectionStatus = ClientState::CONNECTED;
         emit connectionStatusChanged(connectionStatus);
 
         // соединяем события сокета: ерор дисконнект
@@ -117,7 +114,7 @@ void SenderClient::sendMessage(QString message) {
         }
     } else {
         emit warning("Connection lost");
-        connectionStatus = ClientConnectionStatus::DISCONNECTED;
+        connectionStatus = ClientState::DISCONNECTED;
         emit connectionStatusChanged(connectionStatus);
     }
 }
@@ -129,29 +126,25 @@ QString SenderClient::getErrorMessage(){
 void SenderClient::onSocketError(QAbstractSocket::SocketError socketError) {
     Q_UNUSED(socketError);
     errorMessage = QString("Ошибка сокета: %1").arg(socket->errorString());
-    connectionStatus = ClientConnectionStatus::SOCKET_ERROR;
-    emit connectionStatusChanged(ClientConnectionStatus::SOCKET_ERROR);
+    connectionStatus = ClientState::ERROR;
+    emit connectionStatusChanged(connectionStatus);
     emit warning(QString("Socker error %1").arg(socket->errorString()));
 }
 
 void SenderClient::disconnectFromHost(){
     if(socket->state() == QAbstractSocket::ConnectedState){
         socket->disconnectFromHost();
-        connectionStatus = ClientConnectionStatus::DISCONNECTED;
+        connectionStatus = ClientState::DISCONNECTED;
         emit connectionStatusChanged(connectionStatus);
         socket->deleteLater();
     }
 }
 
 void SenderClient::onDisconnected() {
-    connectionStatus = ClientConnectionStatus::DISCONNECTED;
-    emit connectionStatusChanged(ClientConnectionStatus::DISCONNECTED);
+    connectionStatus = ClientState::DISCONNECTED;
+    emit connectionStatusChanged(ClientState::DISCONNECTED);
     emit warning("Host connection lost");
     // QMessageBox::warning(this, "Предупреждение", "Соединение с сервером было разорвано.");
     // Можно добавить логику переподключения здесь
     socket->deleteLater(); // Освободить память
 }
-
-
-
-

@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp" "CMakeFiles/Ardis.dir/main.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/main.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp" "CMakeFiles/Ardis.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/mainwindow.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp" "CMakeFiles/Ardis.dir/receiverobject.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/receiverobject.cpp.obj.d"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.cpp" "CMakeFiles/Ardis.dir/receiverwidget.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/receiverwidget.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp" "CMakeFiles/Ardis.dir/senderclient.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/senderclient.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp" "CMakeFiles/Ardis.dir/sessionmanager.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/sessionmanager.cpp.obj.d"
   )
