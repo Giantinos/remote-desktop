@@ -13,7 +13,7 @@ ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
     server = new QTcpServer(this);
 
     // emit serverStatusChanged("Server not started");
-    serverStatus = ConnectionStatus::SERVER_STOPPED;
+    serverStatus = ServerState::STOPPED;
 }
 
 int ReceiverObject::getServerStatus(){
@@ -38,7 +38,7 @@ void ReceiverObject::initServer(){
         if (!server->listen(QHostAddress::Any, port)) { // QHostAddress::Any слушает на всех доступных сетевых интерфейсах
             emit serverStatusChanged("Error starting server");
             emit warning(QString("Cant start server at port %1. Error: %2").arg(port).arg(server->errorString()));
-            serverStatus = ConnectionStatus::S_ERROR;
+            serverStatus = ServerState::S_ERROR;
             server->deleteLater();
         } else {
             QString listenAddress = server->serverAddress().toString();
@@ -46,7 +46,7 @@ void ReceiverObject::initServer(){
                 // Если слушает на всех, показываем, на чем реально
                 listenAddress = "All interfaces";
             }
-            serverStatus = ConnectionStatus::SERVER_STARTED;
+            serverStatus = ServerState::STARTED;
             emit serverStatusChanged(QString("Server started. Listening %1:%2").arg(listenAddress).arg(port));
             connect(server, &QTcpServer::newConnection, this, &ReceiverObject::onNewConnection);
 
@@ -70,12 +70,12 @@ void ReceiverObject::onNewConnection() {
         int clientPort = clientSocket->peerPort();
         textWidget->append(QString("New Client Connected: %1:%2").arg(clientAddress).arg(clientPort));
         emit serverStatusChanged(QString("Client connected (%1:%2)").arg(clientAddress).arg(clientPort));
-        serverStatus = ConnectionStatus::CLIENT_CONNECTED;
+        serverStatus = ServerState::CLIENT_CONNECTED;
 
         connect(clientSocket, &QTcpSocket::readyRead, this, &ReceiverObject::onReadyRead);
         connect(clientSocket, &QTcpSocket::disconnected, this, &ReceiverObject::onClientDisconnected);
         client = clientSocket;
-        //##############
+        //############## подключения бльше не принимаются
         server->close();
         //##############
     }
@@ -99,11 +99,12 @@ void ReceiverObject::onReadyRead() {
 
 void ReceiverObject::onClientDisconnected() {
     QTcpSocket *clientSocket = qobject_cast<QTcpSocket *>(sender());
-    serverStatus = ConnectionStatus::SERVER_STARTED;
+    serverStatus = ServerState::STARTED;
     if (clientSocket) {
         QString clientAddress = clientSocket->peerAddress().toString();
         int clientPort = clientSocket->peerPort();
         textWidget->append(QString("Client disconnected: %1:%2").arg(clientAddress).arg(clientPort));
+        serverStatus = ServerState::STARTED;
         emit serverStatusChanged("Server is active. Waiting for connections...");
         clientSocket->deleteLater(); // Освободить память
     }else {
@@ -114,10 +115,10 @@ void ReceiverObject::onClientDisconnected() {
 QString ReceiverObject::getStringServerStatus(){
     QString status;
     switch(serverStatus){
-    case ConnectionStatus::SERVER_STOPPED: status = "Server stopped"; break;
-    case ConnectionStatus::SERVER_STARTED: status = "Server started"; break;
-    case ConnectionStatus::CLIENT_CONNECTED: status = "Client connected"; break;
-    case ConnectionStatus::S_ERROR: status = "Error"; break;
+    case ServerState::STOPPED: status = "Server stopped"; break;
+    case ServerState::STARTED: status = "Server started"; break;
+    case ServerState::CLIENT_CONNECTED: status = "Client connected"; break;
+    case ServerState::S_ERROR: status = "Error"; break;
     }
 
     return status;
@@ -125,16 +126,17 @@ QString ReceiverObject::getStringServerStatus(){
 
 void ReceiverObject::stopServer(){
     if (server->isListening()){
-        serverStatus = ConnectionStatus::SERVER_STOPPED;
-        server->close();
         emit serverStatusChanged("Server stopped listening");
+        serverStatus = ServerState::STOPPED;
+        server->close();
     }
 }
 
 void ReceiverObject::disconnectClient(){
     if(client->state() == QAbstractSocket::ConnectedState){
         client->disconnectFromHost();
-        serverStatus = ConnectionStatus::SERVER_STARTED;
+        serverStatus = ServerState::STARTED;
+        emit serverStatusChanged("Server started");
     }else{
         emit warning("Client is not connected");
     }

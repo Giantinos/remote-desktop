@@ -9,13 +9,16 @@ SenderClient::SenderClient(QWidget *parent) : QObject(parent)
 QString SenderClient::getStringConnectionStatus(){
     QString status;
     switch(connectionStatus){
-    case 0: status = "Disconnected"; break;
-    case 1: status = "Connecting"; break;
-    case 2: status = "Connected"; break;
-    case 3: status = "Connection failed"; break;
-    case 4: status = "Error"; break;
+    case ClientState::DISCONNECTED: status = "Disconnected"; break;
+    case ClientState::CONNECTING: status = "Connecting"; break;
+    case ClientState::CONNECTED: status = "Connected"; break;
+    case ClientState::C_ERROR: status = "Error"; break;
     }
     return status;
+}
+
+int SenderClient::getConnectionStatus(){
+    return this->connectionStatus;
 }
 
 void SenderClient::connectToHost(){
@@ -37,7 +40,7 @@ void SenderClient::connectToHost(){
     socket->connectToHost(hostAddress, hostPort);
 
     connectionStatus = ClientState::CONNECTING;
-    connectionStatusChanged(connectionStatus);
+    emit connectionStatusChanged(connectionStatus);
 
     // Ожидаем подключения, но с таймаутом
     if (!socket->waitForConnected(CONNECTION_TIMEOUT)) {

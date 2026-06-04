@@ -42,9 +42,9 @@ signals:
     void warning(QString message);
 };
 
-enum ConnectionStatus{
-    SERVER_STOPPED,
-    SERVER_STARTED,
+enum ServerState{
+    STOPPED,
+    STARTED,
     CLIENT_CONNECTED,
     S_ERROR
 };

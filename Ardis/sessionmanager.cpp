@@ -101,17 +101,32 @@ void SessionManager::onInvalidClientSettings(){
 
 void SessionManager::updateUiState(){
     switch(senderClient->getConnectionStatus()){
-    case ClientConnectionStatus::CONNECTED:
+    case ClientState::CONNECTED:
         onClientConnected();
         break;
-    case ClientConnectionStatus::DISCONNECTED:
+    case ClientState::DISCONNECTED:
+        onClientDisconnected();
+        break;
+    case ClientState::C_ERROR:
         onClientDisconnected();
         break;
     default: break;
     }
 
     switch(receiverObject->getServerStatus()){
-
+    case ServerState::STOPPED:
+        onServerStopped();
+        break;
+    case ServerState::STARTED:
+        onServerStarted();
+        break;
+    case ServerState::CLIENT_CONNECTED:
+        onServerHaveAConnection();
+        break;
+    case ServerState::S_ERROR:
+        onServerStopped();
+        break;
+    default: break;
     }
 
 }
