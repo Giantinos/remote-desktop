@@ -419,15 +419,21 @@
 			null
 		],
 		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h",
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h",
 			"MU",
-			"EWIEGA46WW/moc_receiverwidget.cpp",
+			"EWIEGA46WW/moc_receiverobject.cpp",
 			null
 		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h",
 			"MU",
 			"EWIEGA46WW/moc_senderclient.cpp",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h",
+			"MU",
+			"EWIEGA46WW/moc_sessionmanager.cpp",
 			null
 		]
 	],
@@ -512,12 +518,17 @@
 			null
 		],
 		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.cpp",
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp",
 			"MU",
 			null
 		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp",
 			"MU",
 			null
 		]

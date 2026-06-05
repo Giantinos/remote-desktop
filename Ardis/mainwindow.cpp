@@ -30,9 +30,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->button_setParameters, &QPushButton::clicked, this, &MainWindow::setUpHostParameters);
     // ---- Send ----
     connect(ui->pushButton_sendMessage, &QPushButton::clicked, this, &MainWindow::sendMessage);
-    // ---- Set status ----
+    // ---- Set status | Update UI ----
     connect(senderClient,  &SenderClient::connectionStatusChanged,this, [this]() {
         ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
+        sessionManager->updateUiState();
     });
     // ---- Warnings ----
     ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
@@ -42,9 +43,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ====Server====
 
-    // ---- Set status ----
+    // ---- Set status | Update UI ----
     connect(receiverObject, &ReceiverObject::serverStatusChanged, this ,[this](QString message){
         ui->label_serverStatus->setText(message);
+        sessionManager->updateUiState();
     });
     // ---- Warnings ----
     ui->label_serverStatus->setText(receiverObject->getStringServerStatus());
@@ -53,9 +55,6 @@ MainWindow::MainWindow(QWidget *parent)
     });
     // ---- Start ----
     connect(ui->pushButton_startServer, &QPushButton::clicked, this,&MainWindow::startServer);
-
-
-
 }
 
 void MainWindow::connectToHost(){

@@ -34,7 +34,8 @@ void ReceiverObject::initServer(){
         return;
     }
     // Пытаемся прослушивать на указанном порту
-    if(isCorrectPort())
+    if(isCorrectPort()){
+        if(!server) qDebug() <<"pizdec";
         if (!server->listen(QHostAddress::Any, port)) { // QHostAddress::Any слушает на всех доступных сетевых интерфейсах
             emit serverStatusChanged("Error starting server");
             emit warning(QString("Cant start server at port %1. Error: %2").arg(port).arg(server->errorString()));
@@ -52,6 +53,7 @@ void ReceiverObject::initServer(){
 
             textWidget->append("Server started. Waiting for connections");
         }
+    }
     else emit warning("Invalid port. Allowed port 1 <= port <= 65535");
 }
 

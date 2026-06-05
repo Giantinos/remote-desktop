@@ -29,6 +29,7 @@ public slots:
     void onClientDisconnected();
     void onValidClientSettings();
     void onInvalidClientSettings();
+    void updateUiState();
 
     // void onParametersChanged();
 
@@ -48,7 +49,9 @@ private:
 //  == Methods ==
     void disableButton(QPushButton *button, QString buttonName);
     void enableButton(QPushButton *button, QString buttonName);
-    void updateUiState();
+
+private slots:
+    bool isButtonOk(QPushButton *button);
 
 
 signals:

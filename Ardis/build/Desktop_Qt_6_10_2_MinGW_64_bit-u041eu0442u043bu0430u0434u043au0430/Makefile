@@ -272,29 +272,29 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
-receiverwidget.obj: receiverwidget.cpp.obj
-.PHONY : receiverwidget.obj
+receiverobject.obj: receiverobject.cpp.obj
+.PHONY : receiverobject.obj
 
 # target to build an object file
-receiverwidget.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.obj
-.PHONY : receiverwidget.cpp.obj
+receiverobject.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverobject.cpp.obj
+.PHONY : receiverobject.cpp.obj
 
-receiverwidget.i: receiverwidget.cpp.i
-.PHONY : receiverwidget.i
+receiverobject.i: receiverobject.cpp.i
+.PHONY : receiverobject.i
 
 # target to preprocess a source file
-receiverwidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.i
-.PHONY : receiverwidget.cpp.i
+receiverobject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverobject.cpp.i
+.PHONY : receiverobject.cpp.i
 
-receiverwidget.s: receiverwidget.cpp.s
-.PHONY : receiverwidget.s
+receiverobject.s: receiverobject.cpp.s
+.PHONY : receiverobject.s
 
 # target to generate assembly for a file
-receiverwidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverwidget.cpp.s
-.PHONY : receiverwidget.cpp.s
+receiverobject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverobject.cpp.s
+.PHONY : receiverobject.cpp.s
 
 senderclient.obj: senderclient.cpp.obj
 .PHONY : senderclient.obj
@@ -320,6 +320,30 @@ senderclient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/senderclient.cpp.s
 .PHONY : senderclient.cpp.s
 
+sessionmanager.obj: sessionmanager.cpp.obj
+.PHONY : sessionmanager.obj
+
+# target to build an object file
+sessionmanager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.obj
+.PHONY : sessionmanager.cpp.obj
+
+sessionmanager.i: sessionmanager.cpp.i
+.PHONY : sessionmanager.i
+
+# target to preprocess a source file
+sessionmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.i
+.PHONY : sessionmanager.cpp.i
+
+sessionmanager.s: sessionmanager.cpp.s
+.PHONY : sessionmanager.s
+
+# target to generate assembly for a file
+sessionmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.s
+.PHONY : sessionmanager.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -344,12 +368,15 @@ help:
 	@echo ... mainwindow.obj
 	@echo ... mainwindow.i
 	@echo ... mainwindow.s
-	@echo ... receiverwidget.obj
-	@echo ... receiverwidget.i
-	@echo ... receiverwidget.s
+	@echo ... receiverobject.obj
+	@echo ... receiverobject.i
+	@echo ... receiverobject.s
 	@echo ... senderclient.obj
 	@echo ... senderclient.i
 	@echo ... senderclient.s
+	@echo ... sessionmanager.obj
+	@echo ... sessionmanager.i
+	@echo ... sessionmanager.s
 .PHONY : help
 
 

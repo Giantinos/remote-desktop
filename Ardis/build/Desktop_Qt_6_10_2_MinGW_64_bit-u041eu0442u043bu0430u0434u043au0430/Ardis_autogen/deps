@@ -1,4 +1,5 @@
 Ardis_autogen/timestamp: \
+	C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -143,7 +144,6 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
-	C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
@@ -170,21 +170,13 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
-	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -635,9 +627,11 @@ Ardis_autogen/timestamp: \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h \
-	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.cpp \
-	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

@@ -401,4 +401,5 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h \
-  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h \
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h

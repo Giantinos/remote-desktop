@@ -1,5 +1,6 @@
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_mainwindow.cpp: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h \
   D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h \
+  C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -144,7 +145,6 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
@@ -171,21 +171,13 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -408,5 +400,6 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h \
-  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h \
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h \
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h

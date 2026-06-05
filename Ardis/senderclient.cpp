@@ -113,7 +113,7 @@ void SenderClient::sendMessage(QString message) {
         if (!message.isEmpty()) {
             socket->write(message.toUtf8());
             socket->flush();
-            emit clientEvent("Message sended");
+            // emit clientEvent("Message sended");
         }
     } else {
         emit warning("Connection lost");

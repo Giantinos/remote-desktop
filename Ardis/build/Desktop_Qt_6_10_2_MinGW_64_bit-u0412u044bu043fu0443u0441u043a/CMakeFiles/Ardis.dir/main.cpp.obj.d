@@ -1,19 +1,33 @@
 CMakeFiles/Ardis.dir/main.cpp.obj: \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\main.cpp \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\mainwindow.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\senderclient.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpSocket \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtcoreglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtconfiginclude.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/pstl_config.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
- C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stddef.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qconfig.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtcore-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtconfigmacros.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcompilerdetection.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qprocessordetection.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qsystemdetection.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/utility \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/assert.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/corecrt.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw.h \
@@ -21,16 +35,6 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/utility \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_relops.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
- C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stdint.h \
- C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/assert.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stdlib.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdlib \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stdlib.h \
@@ -43,21 +47,21 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mm_malloc.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/errno.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_abs.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtcoreglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtconfiginclude.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/version \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qconfig.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtcore-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtconfigmacros.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtdeprecationdefinitions.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qcompilerdetection.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qprocessordetection.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qsystemdetection.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtcoreexports.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtdeprecationmarkers.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtclasshelpermacros.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stddef.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstdint \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stdint.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdbool.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qassert.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtnoop.h \
@@ -152,12 +156,8 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtresource.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qttranslation.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobjectdefs.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qnamespace.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcompare.h \
@@ -231,8 +231,6 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/shared_ptr_atomic.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qchar.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qstringview.h \
@@ -309,7 +307,6 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qscopedpointer.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qmetatype.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfloat16.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtformat_impl.h \
@@ -331,31 +328,11 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qmargins.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qcheckedint_impl.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qshareddata.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qspan.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
  C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qshareddata.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtextstream.h \
@@ -374,6 +351,41 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpServer \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qmargins.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcheckedint_impl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qfont.h \
@@ -384,21 +396,6 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
- D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\senderclient.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpSocket \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpServer \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QHostAddress \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
@@ -415,6 +412,10 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
