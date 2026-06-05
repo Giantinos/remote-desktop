@@ -128,9 +128,10 @@ QString ReceiverObject::getStringServerStatus(){
 
 void ReceiverObject::stopServer(){
     if (server->isListening()){
-        emit serverStatusChanged("Server stopped listening");
-        serverStatus = ServerState::STOPPED;
         server->close();
+        serverStatus = ServerState::STOPPED;
+        emit serverStatusChanged("Server stopped");
+        textWidget->append("Server stopped.");
     }
 }
 

@@ -52,20 +52,18 @@ SessionManager::SessionManager(SenderClient *senderClient,
     }else emit Error("Error assigning <stopServerButton>");
 }
 
-void SessionManager::disableButton(QPushButton *button, QString buttonName){
+void SessionManager::disableButton(QPushButton *button){
     if(button){
         button->setDisabled(true);
     }
-    else emit Error(QString("Error: nullptr <%1> %2")
-                       .arg(buttonName,"buton"));
+    else emit Error(QString("Error: nullptr of button"));
 }
 
-void SessionManager::enableButton(QPushButton *button, QString buttonName){
+void SessionManager::enableButton(QPushButton *button){
     if(button){
         button->setEnabled(true);
     }
-    else emit Error(QString("Error: nullptr <%1> %2")
-                       .arg(buttonName, "button"));
+    else emit Error(QString("Error: nullptr of button"));
 }
 
 bool SessionManager::isButtonOk(QPushButton *button){
@@ -81,47 +79,53 @@ bool SessionManager::isButtonOk(QPushButton *button){
 
 void SessionManager::onClientConnected(){
     if(isButtonOk(connectToServerButton))
-    disableButton(connectToServerButton,connectToServerButton->objectName());
+    disableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    disableButton(startServerButton,startServerButton->objectName());
+    disableButton(startServerButton);
 }
 
 void SessionManager::onClientDisconnected(){
     if(isButtonOk(sendMessageButton))
-    disableButton(sendMessageButton, sendMessageButton->objectName());
+    disableButton(sendMessageButton);
 }
 
 void SessionManager::onServerStarted(){
     if(isButtonOk(connectToServerButton))
-    disableButton(connectToServerButton, connectToServerButton->objectName());
+    disableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    disableButton(startServerButton, startServerButton->objectName());
+    disableButton(startServerButton);
+    if(isButtonOk(disconnectFromServerButton))
+    disableButton(disconnectFromServerButton);
+    if(isButtonOk(disconnectClientButton))
+    disableButton(disconnectClientButton);
 }
 
 void SessionManager::onServerStopped(){
     if(isButtonOk(connectToServerButton))
-    enableButton(connectToServerButton, connectToServerButton->objectName());
+    enableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    enableButton(startServerButton, startServerButton->objectName());
+    enableButton(startServerButton);
+    if(isButtonOk(disconnectFromServerButton))
+        enableButton(disconnectFromServerButton);
 }
 
 void SessionManager::onServerHaveAConnection(){
     if(isButtonOk(sendMessageButton))
-    enableButton(sendMessageButton, sendMessageButton->objectName());
+    enableButton(sendMessageButton);
 }
 
 void SessionManager::onValidClientSettings(){
     if(isButtonOk(connectToServerButton))
-    enableButton(connectToServerButton, connectToServerButton->objectName());
+    enableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    enableButton(startServerButton, startServerButton->objectName());
+    enableButton(startServerButton);
 }
 
 void SessionManager::onInvalidClientSettings(){
     if(isButtonOk(connectToServerButton))
-    disableButton(connectToServerButton, connectToServerButton->objectName());
+    disableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    disableButton(startServerButton, startServerButton->objectName());
+    disableButton(startServerButton);
 }
 
 void SessionManager::updateUiState(){

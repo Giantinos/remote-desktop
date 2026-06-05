@@ -47,8 +47,8 @@ private:
     QPushButton *startServerButton;
     QPushButton *stopServerButton;
 //  == Methods ==
-    void disableButton(QPushButton *button, QString buttonName);
-    void enableButton(QPushButton *button, QString buttonName);
+    void disableButton(QPushButton *button);
+    void enableButton(QPushButton *button);
 
 private slots:
     bool isButtonOk(QPushButton *button);

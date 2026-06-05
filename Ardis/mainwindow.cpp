@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->pushButton_disconnectClient->setEnabled(false);
     // #### Main Objects ####
     senderClient = new SenderClient(this);
     receiverObject = new ReceiverObject(ui->textWidget,this);
@@ -55,6 +56,8 @@ MainWindow::MainWindow(QWidget *parent)
     });
     // ---- Start ----
     connect(ui->pushButton_startServer, &QPushButton::clicked, this,&MainWindow::startServer);
+    // ---- Stop ----
+    connect(ui->pushButton_stopServer, &QPushButton::clicked, this, &MainWindow::stopServer);
 }
 
 void MainWindow::connectToHost(){

@@ -50,7 +50,10 @@ template <> constexpr inline auto SessionManager::qt_create_metaobjectdata<qt_me
         "onClientDisconnected",
         "onValidClientSettings",
         "onInvalidClientSettings",
-        "updateUiState"
+        "updateUiState",
+        "isButtonOk",
+        "QPushButton*",
+        "button"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -74,6 +77,10 @@ template <> constexpr inline auto SessionManager::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'updateUiState'
         QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'isButtonOk'
+        QtMocHelpers::SlotData<bool(QPushButton *)>(12, 2, QMC::AccessPrivate, QMetaType::Bool, {{
+            { 0x80000000 | 13, 14 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -106,6 +113,8 @@ void SessionManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 6: _t->onValidClientSettings(); break;
         case 7: _t->onInvalidClientSettings(); break;
         case 8: _t->updateUiState(); break;
+        case 9: { bool _r = _t->isButtonOk((*reinterpret_cast<std::add_pointer_t<QPushButton*>>(_a[1])));
+            if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -134,14 +143,14 @@ int SessionManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

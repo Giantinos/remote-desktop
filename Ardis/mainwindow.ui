@@ -176,7 +176,7 @@
        <x>10</x>
        <y>70</y>
        <width>309</width>
-       <height>16</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
@@ -210,7 +210,7 @@
       <rect>
        <x>10</x>
        <y>110</y>
-       <width>34</width>
+       <width>301</width>
        <height>28</height>
       </rect>
      </property>
@@ -287,12 +287,15 @@
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>65</width>
-       <height>28</height>
+       <width>301</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
       <string>server status</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_startServer">
