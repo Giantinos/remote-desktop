@@ -22,6 +22,7 @@ public:
     void disconnectClient();
     int getServerStatus();
     QString getStringServerStatus();
+    void sendMessage(QString& message);
 
 private slots:
     void onNewConnection();

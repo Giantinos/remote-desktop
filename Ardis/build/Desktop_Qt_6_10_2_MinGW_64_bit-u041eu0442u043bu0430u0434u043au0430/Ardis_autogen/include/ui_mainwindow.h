@@ -121,7 +121,7 @@ public:
         label->setFont(font);
         label_clietnConnection = new QLabel(groupBox);
         label_clietnConnection->setObjectName("label_clietnConnection");
-        label_clietnConnection->setGeometry(QRect(10, 70, 309, 16));
+        label_clietnConnection->setGeometry(QRect(10, 70, 309, 21));
         label_clietnConnection->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         label_2 = new QLabel(groupBox);
         label_2->setObjectName("label_2");
@@ -129,7 +129,7 @@ public:
         label_2->setFont(font);
         label_clientEvents = new QLabel(groupBox);
         label_clientEvents->setObjectName("label_clientEvents");
-        label_clientEvents->setGeometry(QRect(10, 110, 34, 28));
+        label_clientEvents->setGeometry(QRect(10, 110, 301, 28));
         label_clientEvents->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         pushButton_connectToServer = new QPushButton(groupBox);
         pushButton_connectToServer->setObjectName("pushButton_connectToServer");
@@ -147,7 +147,8 @@ public:
         label_3->setFont(font);
         label_serverStatus = new QLabel(groupBox_2);
         label_serverStatus->setObjectName("label_serverStatus");
-        label_serverStatus->setGeometry(QRect(10, 30, 65, 28));
+        label_serverStatus->setGeometry(QRect(10, 30, 301, 41));
+        label_serverStatus->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         pushButton_startServer = new QPushButton(groupBox_2);
         pushButton_startServer->setObjectName("pushButton_startServer");
         pushButton_startServer->setGeometry(QRect(10, 70, 75, 24));

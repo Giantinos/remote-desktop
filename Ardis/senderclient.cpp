@@ -108,7 +108,7 @@ bool SenderClient::isCorrectPort(int port){
     return port >= 1 && port <= 65535 ? true : false;
 }
 
-void SenderClient::sendMessage(QString message) {
+void SenderClient::sendMessage(QString& message) {
     if (socket->state() == QAbstractSocket::ConnectedState) {
         if (!message.isEmpty()) {
             socket->write(message.toUtf8());

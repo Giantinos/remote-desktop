@@ -39,8 +39,10 @@ MainWindow::MainWindow(QWidget *parent)
     // ---- Warnings ----
     ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
     connect(senderClient,  &SenderClient::warning,this, [this](QString message) {
-        QMessageBox::warning(this, "Warning", message);
+        QMessageBox::warning(this, "", message);
     });
+    // ---- UI setup ----
+
 
     // ====Server====
 
@@ -52,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     // ---- Warnings ----
     ui->label_serverStatus->setText(receiverObject->getStringServerStatus());
     connect(receiverObject, &ReceiverObject::warning, this, [this](QString message){
-        QMessageBox::warning(this, "Warning", message);
+        QMessageBox::warning(this, "", message);
     });
     // ---- Start ----
     connect(ui->pushButton_startServer, &QPushButton::clicked, this,&MainWindow::startServer);
@@ -74,6 +76,7 @@ void MainWindow::setUpHostParameters(){
 }
 
 void MainWindow::sendMessage(){
+    // sessionManager->sendMessage();
     senderClient->sendMessage(ui->lineEdit_messageToSend->text());
 }
 

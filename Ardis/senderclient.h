@@ -27,7 +27,7 @@ public:
     void setHostParameters(QString hostAddress, int hostPort);
     void setHostIp(QString hostAddress);
     void setHostPort(int hostPort);
-    void sendMessage(QString message);
+    void sendMessage(QString& message);
     void connectToHost();
     void disconnectFromHost();
     int getConnectionStatus();

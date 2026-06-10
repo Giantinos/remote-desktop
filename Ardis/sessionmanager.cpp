@@ -79,14 +79,18 @@ bool SessionManager::isButtonOk(QPushButton *button){
 
 void SessionManager::onClientConnected(){
     if(isButtonOk(connectToServerButton))
-    disableButton(connectToServerButton);
+        disableButton(connectToServerButton);
     if(isButtonOk(startServerButton))
-    disableButton(startServerButton);
+        disableButton(startServerButton);
+    if(isButtonOk(disconnectClientButton))
+        enableButton(disconnectClientButton);
 }
 
 void SessionManager::onClientDisconnected(){
     if(isButtonOk(sendMessageButton))
-    disableButton(sendMessageButton);
+        disableButton(sendMessageButton);
+    if(isButtonOk(disconnectClientButton))
+        disableButton(disconnectClientButton);
 }
 
 void SessionManager::onServerStarted(){
@@ -157,4 +161,18 @@ void SessionManager::updateUiState(){
         break;
     default: break;
     }
+}
+
+void SessionManager::sendMessage(QString& message){
+    if(ClientState::CONNECTED){
+        // client->sendMessage();
+        senderClient->sendMessage(message);
+        return;
+    }else
+    if(ServerState::CLIENT_CONNECTED){
+        // receiverObject->sendMessage(message)
+        receiverObject->sendMessage(message);
+        return;
+    }
+    emit Error("Error sending message. Connection not exist");
 }

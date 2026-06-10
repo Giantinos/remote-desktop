@@ -144,3 +144,15 @@ void ReceiverObject::disconnectClient(){
         emit warning("Client is not connected");
     }
 }
+
+void ReceiverObject::sendMessage(QString& message){
+    if(client){
+        if(client->state() == QTcpSocket::ConnectedState){
+            client->write(message.toUtf8());
+            client->flush();
+        }else
+            emit warning("Error sending message - client disconnected");
+    }else{
+        emit warning("Pointer error: client is null");
+    }
+}
