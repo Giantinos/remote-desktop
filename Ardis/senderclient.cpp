@@ -42,7 +42,7 @@ void SenderClient::connectToHost(){
         return;
     }
 
-    if(connectionStatus == ClientState::CONNECTING){
+    if(connectionStatus == ClientState::CONNECTED){
         emit warning("Already connected");
         return;
     }
@@ -191,11 +191,22 @@ void SenderClient::onSocketError(QAbstractSocket::SocketError socketError) {
 }
 
 void SenderClient::disconnectFromHost(){
+    if(!socket) return;
+
     if(socket->state() == QAbstractSocket::ConnectedState){
         socket->disconnectFromHost();
+        if(socket->state() != QTcpSocket::UnconnectedState){
+            socket->waitForDisconnected(2000);
+        }
+
+        if (socket->state() != QTcpSocket::UnconnectedState) {
+            socket->abort();
+        }
+
+        socket->deleteLater();
+        socket = nullptr;
         connectionStatus = ClientState::DISCONNECTED;
         emit connectionStatusChanged(connectionStatus);
-        socket->deleteLater();
     }
 }
 
