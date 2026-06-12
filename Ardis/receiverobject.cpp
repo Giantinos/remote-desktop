@@ -6,13 +6,9 @@ ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
 
     this->port = 8000;
 
-    // QVBoxLayout *layout = new QVBoxLayout(this);
-    // layout->addWidget(receivedMessages);
-    // layout->addWidget(statusLabel);
     this->textWidget = textWidget;
     server = new QTcpServer(this);
 
-    // emit serverStatusChanged("Server not started");
     serverStatus = ServerState::STOPPED;
 }
 
@@ -67,11 +63,12 @@ bool ReceiverObject::isCorrectPort(int port){
 
 void ReceiverObject::onNewConnection() {
     QTcpSocket *clientSocket = server->nextPendingConnection();
+    textWidget->setText("Incoming connection...");
     if (clientSocket) {
         QString clientAddress = clientSocket->peerAddress().toString();
         int clientPort = clientSocket->peerPort();
-        textWidget->append(QString("New Client Connected: %1:%2").arg(clientAddress).arg(clientPort));
-        emit serverStatusChanged(QString("Client connected (%1:%2)").arg(clientAddress).arg(clientPort));
+        textWidget->append(QString("New Client Connected: %1:%2").arg(clientAddress,clientPort));
+        emit serverStatusChanged(QString("Client connected (%1:%2)").arg(clientAddress, clientPort));
         serverStatus = ServerState::CLIENT_CONNECTED;
 
         connect(clientSocket, &QTcpSocket::readyRead, this, &ReceiverObject::onReadyRead);
@@ -155,4 +152,13 @@ void ReceiverObject::sendMessage(QString& message){
     }else{
         emit warning("Pointer error: client is null");
     }
+}
+
+QAbstractSocket::SocketState
+ReceiverObject::checkClientState(){
+    if(client){
+        return client->state();
+    }
+    emit warning("Checking socket state: client is nullptr");
+    return QAbstractSocket::SocketState::UnconnectedState;
 }

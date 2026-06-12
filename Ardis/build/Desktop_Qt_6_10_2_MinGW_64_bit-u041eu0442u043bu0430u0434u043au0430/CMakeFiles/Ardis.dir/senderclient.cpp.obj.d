@@ -397,4 +397,10 @@ CMakeFiles/Ardis.dir/senderclient.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QHostAddress \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h

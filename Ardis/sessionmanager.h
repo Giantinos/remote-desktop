@@ -21,7 +21,7 @@ public:
                             QPushButton *startServerButton = nullptr,
                             QPushButton *stopServerButton = nullptr
                             );
-    void sendMessage(QString& message);
+    void sendMessage(QString message);
 public slots:
     void onServerStarted();
     void onServerStopped();

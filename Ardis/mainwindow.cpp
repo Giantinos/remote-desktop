@@ -77,7 +77,7 @@ void MainWindow::setUpHostParameters(){
 
 void MainWindow::sendMessage(){
     // sessionManager->sendMessage();
-    senderClient->sendMessage(ui->lineEdit_messageToSend->text());
+    sessionManager->sendMessage(ui->lineEdit_messageToSend->text());
 }
 
 void MainWindow::startServer(){

@@ -23,6 +23,8 @@ public:
     int getServerStatus();
     QString getStringServerStatus();
     void sendMessage(QString& message);
+    QAbstractSocket::SocketState checkClientState();
+
 
 private slots:
     void onNewConnection();

@@ -13,6 +13,7 @@
 #include <QTcpServer>
 #include <QMessageBox>
 #include <QHostAddress>
+#include <QTimer>
 
 // --- Параметры сети ---
 const int DEFAULT_PORT = 12345; // Порт, на котором будет работать сервер
@@ -27,7 +28,7 @@ public:
     void setHostParameters(QString hostAddress, int hostPort);
     void setHostIp(QString hostAddress);
     void setHostPort(int hostPort);
-    void sendMessage(QString& message);
+    void sendMessage(QString message);
     void connectToHost();
     void disconnectFromHost();
     int getConnectionStatus();
@@ -53,6 +54,7 @@ private:
     bool isCorrectPort();
     bool isCorrectIp(QString ip);
     bool isCorrectPort(int port);
+    void onConnected();
 
 private slots:
     void onSocketError(QAbstractSocket::SocketError socketError);

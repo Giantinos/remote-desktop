@@ -1,4 +1,5 @@
 #include "sessionmanager.h"
+#include <qlabel.h>
 #include <qpushbutton.h>
 
 SessionManager::SessionManager(SenderClient *senderClient,
@@ -84,6 +85,8 @@ void SessionManager::onClientConnected(){
         disableButton(startServerButton);
     if(isButtonOk(disconnectClientButton))
         enableButton(disconnectClientButton);
+    if(isButtonOk(sendMessageButton) && receiverObject->getServerStatus() == ServerState::STOPPED)
+        enableButton(sendMessageButton);
 }
 
 void SessionManager::onClientDisconnected(){
@@ -91,6 +94,8 @@ void SessionManager::onClientDisconnected(){
         disableButton(sendMessageButton);
     if(isButtonOk(disconnectClientButton))
         disableButton(disconnectClientButton);
+    if(isButtonOk(sendMessageButton))
+        disableButton(sendMessageButton);
 }
 
 void SessionManager::onServerStarted(){
@@ -111,11 +116,15 @@ void SessionManager::onServerStopped(){
     enableButton(startServerButton);
     if(isButtonOk(disconnectFromServerButton))
         enableButton(disconnectFromServerButton);
+    if(isButtonOk(sendMessageButton) && senderClient->getConnectionStatus() == ClientState::DISCONNECTED)
+        disableButton(sendMessageButton);
 }
 
 void SessionManager::onServerHaveAConnection(){
     if(isButtonOk(sendMessageButton))
     enableButton(sendMessageButton);
+    if(isButtonOk(disconnectClientButton))
+        disableButton(disconnectClientButton);
 }
 
 void SessionManager::onValidClientSettings(){
@@ -148,6 +157,7 @@ void SessionManager::updateUiState(){
 
     switch(receiverObject->getServerStatus()){
     case ServerState::STOPPED:
+
         onServerStopped();
         break;
     case ServerState::STARTED:
@@ -163,13 +173,13 @@ void SessionManager::updateUiState(){
     }
 }
 
-void SessionManager::sendMessage(QString& message){
-    if(ClientState::CONNECTED){
+void SessionManager::sendMessage(QString message){
+    if(ClientState::CONNECTED == senderClient->getConnectionStatus()){
         // client->sendMessage();
         senderClient->sendMessage(message);
         return;
     }else
-    if(ServerState::CLIENT_CONNECTED){
+    if(ServerState::CLIENT_CONNECTED == receiverObject->getServerStatus()){
         // receiverObject->sendMessage(message)
         receiverObject->sendMessage(message);
         return;
