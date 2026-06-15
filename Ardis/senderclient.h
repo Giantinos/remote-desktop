@@ -19,6 +19,8 @@
 const int DEFAULT_PORT = 12345; // Порт, на котором будет работать сервер
 const QString DEFAULT_HOST = "127.0.0.1"; // IP-адрес по умолчанию (localhost)
 const int CONNECTION_TIMEOUT = 3000; // Таймаут на подключение
+const QString CLIENT_HANDSHAKE = "HELLO_ARDIS";
+const QString SERVER_HANDSHAKE = "HELLO_ARDIS_ACK";
 
 class SenderClient : public QObject
 {
@@ -54,17 +56,21 @@ private:
     bool isCorrectPort();
     bool isCorrectIp(QString ip);
     bool isCorrectPort(int port);
-    void onConnected();
+    bool isServerAuthentificated = false;
+    unsigned handshakeTime = 3000;
 
 private slots:
     void onSocketError(QAbstractSocket::SocketError socketError);
     void onDisconnected();
+    void onTcpConnected();
+    void onReadyRead();
 
 signals:
     // сигнал для отображения статуса подключения
     void connectionStatusChanged(const int status);
     void warning(const QString message);
     void clientEvent(const QString message);
+    void messageReceived(QByteArray data);
 };
 
 enum ClientState{
