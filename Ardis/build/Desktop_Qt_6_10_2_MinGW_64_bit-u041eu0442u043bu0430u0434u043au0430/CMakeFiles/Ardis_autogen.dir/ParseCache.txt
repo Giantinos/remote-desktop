@@ -1388,6 +1388,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtypes.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qutf8stringview.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h
@@ -1408,12 +1409,17 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h
@@ -1431,10 +1437,14 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h

@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../../senderclient.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -47,6 +48,7 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
         "clientEvent",
         "messageReceived",
         "data",
+        "disconnectFromHost",
         "onSocketError",
         "QAbstractSocket::SocketError",
         "socketError",
@@ -72,16 +74,18 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SignalData<void(QByteArray)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QByteArray, 8 },
         }}),
+        // Slot 'disconnectFromHost'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onSocketError'
-        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 10, 11 },
+        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 11, 12 },
         }}),
         // Slot 'onDisconnected'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onTcpConnected'
         QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onReadyRead'
+        // Slot 'onTcpConnected'
         QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onReadyRead'
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -109,17 +113,18 @@ void SenderClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->warning((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 2: _t->clientEvent((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 3: _t->messageReceived((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1]))); break;
-        case 4: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
-        case 5: _t->onDisconnected(); break;
-        case 6: _t->onTcpConnected(); break;
-        case 7: _t->onReadyRead(); break;
+        case 4: _t->disconnectFromHost(); break;
+        case 5: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
+        case 6: _t->onDisconnected(); break;
+        case 7: _t->onTcpConnected(); break;
+        case 8: _t->onReadyRead(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 4:
+        case 5:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -159,14 +164,14 @@ int SenderClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

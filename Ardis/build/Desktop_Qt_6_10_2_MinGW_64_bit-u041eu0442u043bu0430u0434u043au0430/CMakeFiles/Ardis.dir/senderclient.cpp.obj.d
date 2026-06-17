@@ -406,4 +406,14 @@ CMakeFiles/Ardis.dir/senderclient.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h

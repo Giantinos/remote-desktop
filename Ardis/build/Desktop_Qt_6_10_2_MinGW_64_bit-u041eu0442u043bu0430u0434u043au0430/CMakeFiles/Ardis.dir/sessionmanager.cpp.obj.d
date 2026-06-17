@@ -410,7 +410,6 @@ CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
- D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -421,6 +420,7 @@ CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
