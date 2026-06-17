@@ -1,9 +1,14 @@
 #include "senderclient.h"
 
-SenderClient::SenderClient(QWidget *parent) : QObject(parent)
+SenderClient::SenderClient(QTextEdit *textWidget,QWidget *parent) : QObject(parent)
 {
     socket = new QTcpSocket(this);
     connectionStatus = ClientState::DISCONNECTED;
+    isServerAuthentificated = false;
+    isIntentionalDisconnect = false;
+    if(textWidget){
+        this->textWidget = textWidget;
+    }
 }
 
 QString SenderClient::getStringConnectionStatus(){
@@ -52,6 +57,7 @@ void SenderClient::connectToHost(){
         socket->abort();
         socket->deleteLater();
         socket = nullptr;
+        isServerAuthentificated = false;
     }
     if (!socket) {
         socket = new QTcpSocket(this);
@@ -96,7 +102,7 @@ void SenderClient::onTcpConnected(){
     socket->flush();
 
     QTimer::singleShot(handshakeTime, this, [this](){
-        if(isServerAuthentificated){
+        if(!isServerAuthentificated){
             socket->abort();
             connectionStatus = ClientState::DISCONNECTED;
             emit connectionStatusChanged(connectionStatus);
@@ -107,9 +113,10 @@ void SenderClient::onTcpConnected(){
 
 void SenderClient::onReadyRead(){
     QByteArray data = socket->readAll();
-
     if(!isServerAuthentificated){
         if(data.contains(SERVER_HANDSHAKE.toUtf8())){
+            printMessage("Server is authentificated");
+            printMessage(QString("Server: %1").arg(SERVER_HANDSHAKE));
             isServerAuthentificated = true;
             connectionStatus = ClientState::CONNECTED;
             emit connectionStatusChanged(connectionStatus);
@@ -118,7 +125,7 @@ void SenderClient::onReadyRead(){
             emit warning("Invalid server response");
         }
     } else {
-        emit messageReceived(data);
+        printMessage(QString("Server: %1").arg(data));
     }
 }
 
@@ -202,6 +209,7 @@ void SenderClient::disconnectFromHost(){
     if(!socket) return;
 
     if(socket->state() == QAbstractSocket::ConnectedState){
+        isIntentionalDisconnect = true;
         socket->disconnectFromHost();
         if(socket->state() != QTcpSocket::UnconnectedState){
             socket->waitForDisconnected(2000);
@@ -218,13 +226,20 @@ void SenderClient::disconnectFromHost(){
     }
     connectionStatus = ClientState::DISCONNECTED;
     emit connectionStatusChanged(connectionStatus);
+
 }
 
 void SenderClient::onDisconnected() {
-    connectionStatus = ClientState::DISCONNECTED;
-    emit connectionStatusChanged(connectionStatus);
-    emit warning("Host connection lost");
-    // QMessageBox::warning(this, "Предупреждение", "Соединение с сервером было разорвано.");
-    // Можно добавить логику переподключения здесь
+    if(!isIntentionalDisconnect){
+        connectionStatus = ClientState::DISCONNECTED;
+        emit connectionStatusChanged(connectionStatus);
+        emit warning("Host connection lost");
+    }
     socket->deleteLater(); // Освободить память
+    isServerAuthentificated = false;
+    isIntentionalDisconnect = false;
+}
+
+void SenderClient::printMessage(QString message){
+    textWidget->append(message);
 }

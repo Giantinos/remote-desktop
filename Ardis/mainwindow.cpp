@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->pushButton_disconnectClient->setEnabled(false);
     // #### Main Objects ####
-    senderClient = new SenderClient(this);
+    senderClient = new SenderClient(ui->textWidget,this);
     receiverObject = new ReceiverObject(ui->textWidget,this);
     sessionManager = new SessionManager(senderClient, receiverObject, this,
                                         ui->textWidget,
@@ -26,16 +26,23 @@ MainWindow::MainWindow(QWidget *parent)
     //====Client====
 
     // ----Connect----
-    connect(ui->pushButton_connectToServer, &QPushButton::clicked, this, &MainWindow::connectToHost);
+    connect(ui->pushButton_connectToServer, &QPushButton::clicked,
+            this, &MainWindow::connectToHost);
     // ---- Set parameters ----
-    connect(ui->button_setParameters, &QPushButton::clicked, this, &MainWindow::setUpHostParameters);
+    connect(ui->button_setParameters, &QPushButton::clicked,
+            this, &MainWindow::setUpHostParameters);
     // ---- Send ----
-    connect(ui->pushButton_sendMessage, &QPushButton::clicked, this, &MainWindow::sendMessage);
+    connect(ui->pushButton_sendMessage, &QPushButton::clicked,
+            this, &MainWindow::sendMessage);
     // ---- Set status | Update UI ----
-    connect(senderClient,  &SenderClient::connectionStatusChanged,this, [this]() {
+    connect(senderClient,  &SenderClient::connectionStatusChanged,
+            this, [this]() {
         ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
         sessionManager->updateUiState();
     });
+    // ---- Disconnect from host ----
+    connect(ui->pushButton_disconnectFromServer, &QPushButton::clicked,
+            this, &MainWindow::disconnectFromServer);
     // ---- Warnings ----
     ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
     connect(senderClient,  &SenderClient::warning,this, [this](QString message) {

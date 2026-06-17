@@ -8,8 +8,10 @@
 // #include <QVBoxLayout>
 #include <QTcpSocket>
 #include <QTcpServer>
+#include <QTimer>
 // #include <QMessageBox>
 // #include <QTextBrowser>
+
 
 class ReceiverObject : public QObject
 {
@@ -39,6 +41,7 @@ private:
     QTcpServer *server;
     int serverStatus;
     QTcpSocket *client;
+    bool clientAuthenticated;
 
 signals:
     void serverStatusChanged(QString message);

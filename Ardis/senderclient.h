@@ -9,35 +9,33 @@
 // #include <QPushButton>
 // #include <QLabel>
 // #include <QVBoxLayout>
+#include "params.h"
 #include <QTcpSocket>
 #include <QTcpServer>
 #include <QMessageBox>
 #include <QHostAddress>
 #include <QTimer>
+#include <QTextEdit>
 
-// --- Параметры сети ---
-const int DEFAULT_PORT = 12345; // Порт, на котором будет работать сервер
-const QString DEFAULT_HOST = "127.0.0.1"; // IP-адрес по умолчанию (localhost)
-const int CONNECTION_TIMEOUT = 3000; // Таймаут на подключение
-const QString CLIENT_HANDSHAKE = "HELLO_ARDIS";
-const QString SERVER_HANDSHAKE = "HELLO_ARDIS_ACK";
+
 
 class SenderClient : public QObject
 {
     Q_OBJECT
 public:
-    explicit SenderClient(QWidget *parent = nullptr);
+    explicit SenderClient(QTextEdit *textWidget = nullptr,QWidget *parent = nullptr);
     void setHostParameters(QString hostAddress, int hostPort);
     void setHostIp(QString hostAddress);
     void setHostPort(int hostPort);
     void sendMessage(QString message);
     void connectToHost();
-    void disconnectFromHost();
     int getConnectionStatus();
     QString getErrorMessage();
     QString getWarningMessage();
     QString getStringConnectionStatus();
-    // explicit SenderClient(const QString& hostAddress, int port, QWidget *parent = nullptr);
+
+public slots:
+    void disconnectFromHost();
 
 private:
     // QLineEdit *inputField;
@@ -48,6 +46,7 @@ private:
     // QLabel *statusLabel;
     QTcpSocket *socket;
     QString hostAddress;
+    QTextEdit *textWidget;
     int hostPort;
     int connectionStatus;
     QString errorMessage;
@@ -56,8 +55,10 @@ private:
     bool isCorrectPort();
     bool isCorrectIp(QString ip);
     bool isCorrectPort(int port);
-    bool isServerAuthentificated = false;
+    bool isServerAuthentificated;
+    bool isIntentionalDisconnect;
     unsigned handshakeTime = 3000;
+    void printMessage(QString m);
 
 private slots:
     void onSocketError(QAbstractSocket::SocketError socketError);
@@ -71,6 +72,7 @@ signals:
     void warning(const QString message);
     void clientEvent(const QString message);
     void messageReceived(QByteArray data);
+    // void sendingMessage(QString message);
 };
 
 enum ClientState{

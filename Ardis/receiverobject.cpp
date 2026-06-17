@@ -1,4 +1,5 @@
 #include "receiverobject.h"
+#include "params.h"
 
 ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
     : QObject{parent}
@@ -10,6 +11,7 @@ ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
     server = new QTcpServer(this);
 
     serverStatus = ServerState::STOPPED;
+    clientAuthenticated = false;
 }
 
 int ReceiverObject::getServerStatus(){
@@ -71,12 +73,22 @@ void ReceiverObject::onNewConnection() {
         emit serverStatusChanged(QString("Client connected (%1:%2)").arg(clientAddress, clientPort));
         serverStatus = ServerState::CLIENT_CONNECTED;
 
-        connect(clientSocket, &QTcpSocket::readyRead, this, &ReceiverObject::onReadyRead);
-        connect(clientSocket, &QTcpSocket::disconnected, this, &ReceiverObject::onClientDisconnected);
         client = clientSocket;
+        connect(client, &QTcpSocket::readyRead,
+                this, &ReceiverObject::onReadyRead);
+        connect(client, &QTcpSocket::disconnected,
+                this, &ReceiverObject::onClientDisconnected);
         //############## подключения бльше не принимаются
         server->close();
         //##############
+
+        QTimer::singleShot(3000, this, [this]() {
+            if (!clientAuthenticated && client && client->state() == QTcpSocket::ConnectedState) {
+                emit warning("Handshake timeout - client didn't identify itself");
+                client->write("TIMEOUT\n");
+                client->disconnectFromHost();
+            }
+        });
     }
 }
 
@@ -86,12 +98,26 @@ void ReceiverObject::onReadyRead() {
     Он возвращает указатель на объект, который отправил (сгенерировал) сигнал,
     вызвавший этот слот.*/
 
-    QTcpSocket *clientSocket = qobject_cast<QTcpSocket *>(sender());
-    if (clientSocket) {
-        QByteArray data = clientSocket->readAll();
+    if (client) {
+        QByteArray data = client->readAll();
+        if(!clientAuthenticated){
+            if(data.contains(CLIENT_HANDSHAKE.toUtf8())){
+                client->write(SERVER_HANDSHAKE.toUtf8());
+                client->flush();
+                clientAuthenticated = true;
+                textWidget->append("Клиент авторизован");
+                serverStatus = ServerState::CLIENT_CONNECTED;
+                // ================ разве это нужно в стринге?
+                emit serverStatusChanged(getStringServerStatus());
+            } else {
+                client->write("UNKNOWN");
+                client->disconnectFromHost();
+            }
+        }
+
         QString message = QString::fromUtf8(data);
-        QString clientAddress = clientSocket->peerAddress().toString();
-        int clientPort = clientSocket->peerPort();
+        QString clientAddress = client->peerAddress().toString();
+        int clientPort = client->peerPort();
         textWidget->append(QString("%1:%2> %3").arg(clientAddress).arg(clientPort).arg(message));
     }
 }
