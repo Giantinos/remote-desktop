@@ -410,6 +410,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverwidget.h
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QObject
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QString
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
@@ -817,6 +818,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h
+ mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h
@@ -1257,6 +1259,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp
  uic:./ui_mainwindow.h
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mmc:Q_OBJECT
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QString
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
@@ -1650,11 +1653,13 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h
+ mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QObject
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h
@@ -1663,6 +1668,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q23type_traits.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qanystringview.h
@@ -1673,6 +1679,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qatomic.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qatomic_cxx11.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbasicatomic.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbindingstorage.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearray.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayalgorithms.h
@@ -1692,8 +1699,10 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qexceptionhandling.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qflags.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qfloat16.h
@@ -1767,6 +1776,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtenvironmentvariables.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtformat_impl.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtmetamacros.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtnoop.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtpreprocessorsupport.h
@@ -2051,6 +2061,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QObject
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QString
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
@@ -2454,8 +2465,10 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h
+ mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h
  mdp:D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp
 D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp
+D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h

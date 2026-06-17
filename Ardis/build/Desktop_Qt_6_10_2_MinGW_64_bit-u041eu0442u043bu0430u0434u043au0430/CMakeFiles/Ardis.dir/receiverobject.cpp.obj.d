@@ -403,4 +403,13 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpServer \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\params.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h

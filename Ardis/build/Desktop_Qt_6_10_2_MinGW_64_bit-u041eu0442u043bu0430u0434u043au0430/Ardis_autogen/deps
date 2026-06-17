@@ -1,5 +1,6 @@
 Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
+	C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
@@ -633,6 +634,7 @@ Ardis_autogen/timestamp: \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp \

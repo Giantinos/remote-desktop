@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-c1b577102f58c5983582.json",
+					"jsonFile" : "directory-.-Debug-0d4a91efdab9eed1fe95.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Ardis::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Ardis-Debug-0301c9a7103e4652ee6d.json",
+					"jsonFile" : "target-Ardis-Debug-18c61a965b1681003e0f.json",
 					"name" : "Ardis",
 					"projectIndex" : 0
 				},

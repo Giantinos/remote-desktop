@@ -322,6 +322,9 @@ CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\senderclient.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\params.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpSocket \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpsocket.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
