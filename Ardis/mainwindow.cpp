@@ -67,6 +67,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_startServer, &QPushButton::clicked, this,&MainWindow::startServer);
     // ---- Stop ----
     connect(ui->pushButton_stopServer, &QPushButton::clicked, this, &MainWindow::stopServer);
+    // ---- Disconnect client ----
+    connect(ui->pushButton_disconnectClient, &QPushButton::clicked, this,
+            &MainWindow::disconnectClient);
 }
 
 void MainWindow::connectToHost(){
@@ -92,6 +95,7 @@ void MainWindow::startServer(){
     receiverObject->initServer();
 }
 
+// Server disconnecting a client
 void MainWindow::disconnectClient(){
     receiverObject->disconnectClient();
 }
