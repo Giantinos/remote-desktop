@@ -35,7 +35,7 @@ void ReceiverObject::initServer(){
     if(isCorrectPort()){
         if (!server->listen(QHostAddress::Any, port)) { // QHostAddress::Any слушает на всех доступных сетевых интерфейсах
             emit serverStatusChanged("Error starting server");
-            emit warning(QString("Cant start server at port %1. Error: %2").arg(port).arg(server->errorString()));
+            emit warning(QString("Can`t start server at port %1. Error: %2").arg(port).arg(server->errorString()));
             serverStatus = ServerState::S_ERROR;
             server->deleteLater();
         } else {
@@ -168,7 +168,7 @@ void ReceiverObject::disconnectClient(){
         emit serverStatusChanged("Server started");
 
         // ---- Слушаем новые подключения снова ----
-        initServer();
+        // initServer();
     }else{
         emit warning("Client is not connected");
     }

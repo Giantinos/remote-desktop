@@ -77,7 +77,7 @@ bool SessionManager::isButtonOk(QPushButton *button){
     return true;
 }
 
-
+// метод клиента
 void SessionManager::onClientConnected(){
     if(isButtonOk(connectToServerButton))
         disableButton(connectToServerButton);
@@ -120,11 +120,12 @@ void SessionManager::onServerStopped(){
         disableButton(sendMessageButton);
 }
 
+// метод сервера
 void SessionManager::onServerHaveAConnection(){
     if(isButtonOk(sendMessageButton))
     enableButton(sendMessageButton);
     if(isButtonOk(disconnectClientButton))
-        disableButton(disconnectClientButton);
+        enableButton(disconnectClientButton);
 }
 
 void SessionManager::onValidClientSettings(){
@@ -142,6 +143,7 @@ void SessionManager::onInvalidClientSettings(){
 }
 
 void SessionManager::updateUiState(){
+
     switch(senderClient->getConnectionStatus()){
     case ClientState::CONNECTED:
         onClientConnected();
