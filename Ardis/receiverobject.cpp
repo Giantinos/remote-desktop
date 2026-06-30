@@ -152,24 +152,53 @@ QString ReceiverObject::getStringServerStatus(){
 }
 
 void ReceiverObject::stopServer(){
-    if (server->isListening()){
-        server->close();
-        serverStatus = ServerState::STOPPED;
-        emit serverStatusChanged("Server stopped");
-        textWidget->append("Server stopped.");
-    }
+
+    auto executeCloseServer= [this]() {
+        if (server && server->isListening()) {
+            server->close();
+            serverStatus = ServerState::STOPPED;
+            emit serverStatusChanged("Server stopped");
+            if (textWidget) {
+                textWidget->append("Server stopped.");
+            }
+        }
+    };
+    if(hasActiveClient()){
+        if(client->state() == QAbstractSocket::ConnectedState){
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(nullptr,
+                                          "Warning",           // Заголовок
+                                          "The server has an active connection. Do you want to disconnect it?",             // Текст
+                                          QMessageBox::Ok | QMessageBox::Cancel);  // Кнопки
+
+            if (reply == QMessageBox::Ok) {
+                disconnectClient();
+                executeCloseServer();
+            }
+        }
+    } else executeCloseServer();
+}
+
+bool ReceiverObject::hasActiveClient()  {
+    return client && client->state() == QAbstractSocket::ConnectedState;
 }
 
 void ReceiverObject::disconnectClient(){
+    qDebug() << ">> Disconnecting client";
     if(client->state() == QAbstractSocket::ConnectedState){
+        qDebug() << ">> ClientsocketState : " << client->state();
+        qDebug() << ">> Disconnecting client: client->disconnectFromHost()";
         client->disconnectFromHost();
         clientAuthenticated = false;
+        qDebug() << ">> Changing server status";
         serverStatus = ServerState::STARTED;
         emit serverStatusChanged("Server started");
 
         // ---- Слушаем новые подключения снова ----
         // initServer();
     }else{
+        qDebug() << ">> ClientsocketState : " << client->state();
+        qDebug() << ">> Throwing Warning";
         emit warning("Client is not connected");
     }
 }

@@ -9,7 +9,7 @@
 #include <QTcpSocket>
 #include <QTcpServer>
 #include <QTimer>
-// #include <QMessageBox>
+#include <QMessageBox>
 // #include <QTextBrowser>
 
 
@@ -32,6 +32,7 @@ private slots:
     void onNewConnection();
     void onReadyRead();
     void onClientDisconnected();
+    bool hasActiveClient();
 
 private:
     int port;
