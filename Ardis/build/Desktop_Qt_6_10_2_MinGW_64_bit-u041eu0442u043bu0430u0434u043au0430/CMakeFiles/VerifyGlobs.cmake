@@ -52,6 +52,9 @@ set(OLD_GLOB
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_receiverobject.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_receiverwidget.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenbase.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenhandler.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenreceiver.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_senderclient.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_senderwidget.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_sessionmanager.cpp"
@@ -60,8 +63,12 @@ set(OLD_GLOB
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/signalprotocol.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -84,11 +91,16 @@ set(OLD_GLOB
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/moc_predefs.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/include/ui_mainwindow.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/iscreencommon.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/signalprotocol.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

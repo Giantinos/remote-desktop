@@ -1,6 +1,8 @@
 CMakeFiles/Ardis.dir/receiverobject.cpp.obj: \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.cpp \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenreceiver.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenbase.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobjectdefs.h \
@@ -321,31 +323,20 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ratio \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/Qpixmap \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qmargins.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcheckedint_impl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qmargins.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
@@ -360,6 +351,28 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
  C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QImage \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QByteArray \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearray.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtextstream.h \
@@ -388,28 +401,61 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QPixmap \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QUdpSocket \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qudpsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenhandler.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QScreen \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QGuiApplication \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpSocket \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QHostAddress \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpServer \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\params.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h

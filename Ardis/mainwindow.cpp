@@ -1,12 +1,16 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "senderclient.h"
+#include <QImageReader>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // DEBUG
+    QTimer *updateUAddressTimer = new QTimer(this);
+    // ///////////////////
     ui->pushButton_disconnectClient->setEnabled(false);
     // #### Main Objects ####
     senderClient = new SenderClient(ui->textWidget,this);
@@ -22,7 +26,19 @@ MainWindow::MainWindow(QWidget *parent)
                                         ui->pushButton_stopServer
                                         );
     // ########
-
+    // DEBUG
+    // check udp address
+    updateUAddressTimer->start(1000);
+    connect(updateUAddressTimer, &QTimer::timeout, this, &MainWindow::checkUdpAddress);
+    // RadioButtons обозначение устройства для отладки (ВМ или хост)
+    connect(ui->radioButton_virtualMachine, &QRadioButton::toggled,
+            this, [&](){
+        applyUdpSettings("192.168.0.30", 8001);
+    });
+    connect(ui->radioButton_host, &QRadioButton::toggled,
+            this, [&](){
+        applyUdpSettings("127.0.0.1", 8001);
+    });
     //====Client====
 
     // ----Connect----
@@ -48,8 +64,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(senderClient,  &SenderClient::warning,this, [this](QString message) {
         QMessageBox::warning(this, "", message);
     });
-    // ---- UI setup ----
+    // ---- Set Display ----
+    senderClient->setDisplayWidget(ui->DisplayWidget_label);
 
+    // ---- UI setup ----
+    setMinimumSize(1330, 600);
+    resize(1330, 600);
+
+    // ---- Udp settings sector ----
+    // connect(ui->pushButton_applyUdpSettings, &QPushButton::click, this,   &MainWindow::applyUdpSettings);
 
     // ====Server====
 
@@ -63,13 +86,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(receiverObject, &ReceiverObject::warning, this, [this](QString message){
         QMessageBox::warning(this, "", message);
     });
-    // ---- Start ----
+    // ---- Start Server ----
     connect(ui->pushButton_startServer, &QPushButton::clicked, this,&MainWindow::startServer);
-    // ---- Stop ----
+    // ---- Stop Server ----
     connect(ui->pushButton_stopServer, &QPushButton::clicked, this, &MainWindow::stopServer);
     // ---- Disconnect client ----
     connect(ui->pushButton_disconnectClient, &QPushButton::clicked, this,
             &MainWindow::disconnectClient);
+
+    // ==== Screencast ====
+
+    connect(ui->pushButton_startServerScreenCast, &QPushButton::clicked, this, &MainWindow::startServerScreencast);
+    connect(ui->pushButton_stopScreencast, &QPushButton::clicked, this, &MainWindow::stopScreenCast);
 }
 
 void MainWindow::connectToHost(){
@@ -107,4 +135,51 @@ void MainWindow::stopServer(){
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+// трансяция экрана
+
+void MainWindow::startMyScreenCast(){
+    /*
+    если трансляция уже запущена
+    то выход
+
+    если трансляция у серверной части
+    то выход
+    */
+
+    if(senderClient->getConnectionStatus() == ClientState::CONNECTED){
+        senderClient->startScreencast();
+    } else {
+        QMessageBox::warning(this, "Cant start Screencast", "Client disconnected");
+    }
+}
+
+void MainWindow::startServerScreencast(){
+    senderClient->startServerScreencast();
+}
+// добавить получение статусов видеопотока у клиента и сервера
+void MainWindow::stopScreenCast(){
+    senderClient->stopServerScreencast();
+}
+
+void MainWindow::applyUdpSettings(QString address, int port){
+    receiverObject->setUdpAddress(address) ;
+    receiverObject->setUdpPort(port);
+    senderClient->setUdpAddress(address);
+    senderClient->setUdpPort(port);
+}
+
+void MainWindow::checkUdpAddress(){
+    if(senderClient->getConnectionStatus() != ClientState::DISCONNECTED){
+        if(senderClient->getUdpAddress().toString()
+            != ui->lineEdit_udpAddress->text()){
+            ui->lineEdit_udpAddress->setText(senderClient->getUdpAddress().toString());
+        }
+    } else if(receiverObject->getServerStatus() != ServerState::STOPPED){
+        if(receiverObject->getUdpAddress().toString()
+            != ui->lineEdit_udpAddress->text()){
+            ui->lineEdit_udpAddress->setText(receiverObject->getUdpAddress().toString());
+        }
+    }
 }

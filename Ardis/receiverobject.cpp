@@ -4,14 +4,20 @@
 ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
     : QObject{parent}
 {
-
     this->port = 8000;
 
     this->textWidget = textWidget;
     server = new QTcpServer(this);
+    m_usocket = new QUdpSocket(this);
 
     serverStatus = ServerState::STOPPED;
     clientAuthenticated = false;
+
+    screen = new ScreenHandler(this);
+    screen->setSocket(m_usocket);
+
+    videoStream = new ScreenReceiver(this);
+    videoStream->setSocket(m_usocket);
 }
 
 int ReceiverObject::getServerStatus(){
@@ -27,12 +33,14 @@ void ReceiverObject::setPort(int port){
 };
 
 void ReceiverObject::initServer(){
+    SHOWMES("== init server start");
     if(port == 0){
         emit warning("Port not initialized");
         return;
     }
     // Пытаемся прослушивать на указанном порту
     if(isCorrectPort()){
+        SHOWMES("== port: ok");
         if (!server->listen(QHostAddress::Any, port)) { // QHostAddress::Any слушает на всех доступных сетевых интерфейсах
             emit serverStatusChanged("Error starting server");
             emit warning(QString("Can`t start server at port %1. Error: %2").arg(port).arg(server->errorString()));
@@ -41,6 +49,7 @@ void ReceiverObject::initServer(){
         } else {
             QString listenAddress = server->serverAddress().toString();
             if (listenAddress.isEmpty() || listenAddress == "0.0.0.0") {
+                SHOWMES("== listen all interfaces");
                 // Если слушает на всех, показываем, на чем реально
                 listenAddress = "All interfaces";
             }
@@ -54,6 +63,76 @@ void ReceiverObject::initServer(){
     else emit warning("Invalid port. Allowed port 1 <= port <= 65535");
 }
 
+// ---- UDP ----
+
+void ReceiverObject::startUdpListening(){
+    qDebug() << ">> startUdpListening()";
+    if(m_usocket->bind(m_uport)){
+
+        connect(m_usocket, &QUdpSocket::readyRead,
+                this, &ReceiverObject::onUdpDataReceived);
+    }else {
+        emit warning("Error: couldnt binding UDP port");
+    }
+}
+
+void ReceiverObject::stopUdpListening(){
+    m_usocket->close();
+
+    // очистить буферы
+    ubuffer.clear();
+    // m_expectedSize = 0;
+}
+// рабочий
+void ReceiverObject::writeUdpDatagram(QByteArray& data){
+    qDebug() << "Writing datagram ip: " << m_uaddress << ":" << m_uport;
+    qint64 sent =  m_usocket->writeDatagram(data,
+                             m_uaddress,
+                             m_uport);
+
+    qDebug() << "Sent bytes:" << sent << "Expected:" << data.size();
+
+    if (sent == -1) {
+        qDebug() << "Send error:" << m_usocket->errorString();
+    }
+}
+// не используется
+void ReceiverObject::writeUdpTest(){
+    QByteArray data;
+    QString s = "TEST UDP DATA";
+    data = s.toUtf8();
+    m_usocket->writeDatagram(data,
+                             m_uaddress,
+                             m_uport);
+}
+
+void ReceiverObject::sendChunks(const QVector<DataChunk> &chunks) {
+    for (const auto &chunk : chunks) {
+        QByteArray packet;
+        QDataStream stream(&packet, QIODevice::WriteOnly);
+        stream << chunk.id << chunk.total << chunk.current << chunk.data;
+        ReceiverObject::writeUdpDatagram(packet);
+    }
+}
+
+void ReceiverObject::onUdpDataReceived(){
+    qDebug() << ">> ReceiverObject::onUdpDataReceived()";
+
+    while(m_usocket->hasPendingDatagrams()){
+        QByteArray buffer;
+        buffer.resize(m_usocket->pendingDatagramSize());
+
+        QHostAddress sender;
+        quint16 senderPort;
+
+        m_usocket->readDatagram(buffer.data(), buffer.size(),
+                                &sender, &senderPort);
+    }
+}
+// ^^^^ UDP ^^^^
+
+
+
 bool ReceiverObject::isCorrectPort(){
     return this->port >= 1 && this->port<= 65535 ? true : false;
 }
@@ -63,6 +142,7 @@ bool ReceiverObject::isCorrectPort(int port){
 }
 
 void ReceiverObject::onNewConnection() {
+    SHOWMES("== on new conenction");
     QTcpSocket *clientSocket = server->nextPendingConnection();
     textWidget->setText("Incoming connection...");
     if (clientSocket) {
@@ -92,7 +172,7 @@ void ReceiverObject::onNewConnection() {
         });
     }
 }
-
+// TCP
 void ReceiverObject::onReadyRead() {
     /*sender() - это встроенный метод библиотеки Qt,
     который используется внутри слотов (обработчиков сигналов).
@@ -101,25 +181,94 @@ void ReceiverObject::onReadyRead() {
 
     if (client) {
         QByteArray data = client->readAll();
+
         if(!clientAuthenticated){
-            if(data.contains(CLIENT_HANDSHAKE.toUtf8())){
-                client->write(SERVER_HANDSHAKE.toUtf8());
-                client->flush();
-                clientAuthenticated = true;
-                textWidget->append("Клиент авторизован");
-                serverStatus = ServerState::CLIENT_CONNECTED;
-                // ================ разве это нужно в стринге?
-                emit serverStatusChanged(getStringServerStatus());
-            } else {
-                client->write("UNKNOWN");
-                client->disconnectFromHost();
-            }
+            handshakeProcess(data);
         }
 
+        // елсе разбор команд в сообщении
         QString message = QString::fromUtf8(data);
-        QString clientAddress = client->peerAddress().toString();
-        int clientPort = client->peerPort();
-        textWidget->append(QString("%1:%2> %3").arg(clientAddress).arg(clientPort).arg(message));
+        signalParse(message);
+
+    }
+}
+
+void ReceiverObject::handshakeProcess(QByteArray& data){
+    if(data.contains(CLIENT_HANDSHAKE.toUtf8())){
+        client->write(SERVER_HANDSHAKE.toUtf8());
+        client->flush();
+        clientAuthenticated = true;
+        textWidget->append("Клиент авторизован");
+        serverStatus = ServerState::CLIENT_CONNECTED;
+        // ================ разве это нужно в стринге?
+        emit serverStatusChanged(getStringServerStatus());
+    } else {
+        client->write("UNKNOWN");
+        client->disconnectFromHost();
+    }
+}
+
+void ReceiverObject::signalParse(const QString& message){
+    qDebug() << "[Server] handling message " << message;
+    SHOWMES("[Server] handling message " + message);
+    // .mid(i) возвращает строку с индекса i
+    if (message.startsWith("MSG:")) {
+        QString text = message.mid(4);
+        handleChatMessage(text);
+    } else if (message.startsWith("CMD:")) {
+        QString command = message.mid(4);
+        handleCommand(command);
+    } else {
+        emit warning("Unknown packet type:" + message);
+        qWarning() << "Unknown packet type:" << message;
+    }
+}
+
+void ReceiverObject::handleChatMessage(const QString& message){
+    QString clientAddress = client->peerAddress().toString();
+    int clientPort = client->peerPort();
+    textWidget->append(QString("%1:%2> %3").arg(clientAddress).arg(clientPort).arg(message));
+}
+
+void ReceiverObject::handleCommand(const QString& cmd){
+    qDebug() << "[Server] handling " + cmd;
+    SHOWMES("[Server] handling " + cmd);
+    if(cmd == "START_SSCREENCAST"){
+        // отправка клиенту сообщение для инициализации udp соединения
+        qDebug() << "[Server] sending signal message to client init udp";
+        SHOWMES("[Server] sending signal message to client init udp");
+        startServerScreencast();
+        connect(screen, &ScreenHandler::frameCaptured,
+                this, &ReceiverObject::sendChunks);
+        textWidget->setText(">> CMD:" + cmd);
+        screen->startCapture();
+
+
+        // отправить по тсп CMD:INIT_UDP
+        // sendInitUdpExchange();
+
+        // чтобы начать механизм обмена по udp (клиент отправит инит-пакет)
+
+        // сервер начинает слушать udp
+        // начинает трансляцию
+
+        // клиент начинает слушать юдп
+    }else if(cmd == "STOP_SSCREENCAST"){
+        //отправить клиенту команду о прекращении слушать юдп
+        SHOWMES("[Server] stop screencast");
+        qDebug() << "[Server] stop screencast";
+        screen->stopCapture();
+        stopScreencast();
+        stopUdpListening();
+        disconnect(screen, &ScreenHandler::frameCaptured,
+                   this, &ReceiverObject::sendChunks);
+        // прекратить трансу
+    }else if(cmd == "START_CSCREENCAST"){
+    // отправить клиенту подтверждение
+        // начать слушать юдп
+    // получить отклиента инициальный пакет юдп
+    } else if(cmd == "STOP_CSCREENCAST"){
+    // прекратить слушать юдп
     }
 }
 
@@ -203,18 +352,6 @@ void ReceiverObject::disconnectClient(){
     }
 }
 
-void ReceiverObject::sendMessage(QString& message){
-    if(client){
-        if(client->state() == QTcpSocket::ConnectedState){
-            client->write(message.toUtf8());
-            client->flush();
-        }else
-            emit warning("Error sending message - client disconnected");
-    }else{
-        emit warning("Pointer error: client is null");
-    }
-}
-
 QAbstractSocket::SocketState
 ReceiverObject::checkClientState(){
     if(client){
@@ -223,3 +360,49 @@ ReceiverObject::checkClientState(){
     emit warning("Checking socket state: client is nullptr");
     return QAbstractSocket::SocketState::UnconnectedState;
 }
+
+// ---- Сетевые методы ----
+// TCP
+void ReceiverObject::sendPacket(const QString& type, const QString &data){
+    if (client->state() == QAbstractSocket::ConnectedState) {
+        if (!data.isEmpty()) {
+            QString packet = type;
+
+            packet += ":" + data;
+
+            client->write(packet.toUtf8());
+            client->flush();
+        }
+    } else {
+        emit warning("State is disconnected");
+    }
+}
+
+void ReceiverObject::sendMessage(const QString& text){
+    sendPacket("MSG", text);
+}
+void ReceiverObject::startServerScreencast() {
+    sendPacket("CMD", "START_SSCREENCAST");
+}
+void ReceiverObject::stopServerScreencast(){
+    sendPacket("CMD", "STOP_SSCREENCAST");
+}
+void ReceiverObject::startScreencast(){
+    sendPacket("CMD", "START_CSCREENCAST");
+}
+void ReceiverObject::stopScreencast(){
+    sendPacket("CMD", "STOP_CSCREENCAST");
+}
+
+void ReceiverObject::setUdpPort(int l_port){
+    if(isCorrectPort(l_port))
+        this->m_uport = l_port;
+    else emit warning("Invalid port");
+}
+void ReceiverObject::setUdpAddress(QString addr){
+    QHostAddress a(addr);
+    if(!a.isNull() && a.protocol() == QAbstractSocket::IPv4Protocol)
+        this->m_uaddress.setAddress(addr);
+    else emit warning("Invalid address");
+}
+

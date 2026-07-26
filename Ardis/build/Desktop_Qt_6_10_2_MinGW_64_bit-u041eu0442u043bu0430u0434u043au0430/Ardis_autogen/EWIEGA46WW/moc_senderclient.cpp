@@ -49,12 +49,26 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
         "messageReceived",
         "data",
         "disconnectFromHost",
+        "sendMessage",
+        "text",
+        "startServerScreencast",
+        "stopServerScreencast",
+        "startScreencast",
+        "stopScreencast",
+        "setUdpAddress",
+        "address",
+        "setUdpPort",
+        "port",
+        "SHOWMES",
+        "s",
+        "getUdpAddress",
         "onSocketError",
         "QAbstractSocket::SocketError",
         "socketError",
         "onDisconnected",
         "onTcpConnected",
-        "onReadyRead"
+        "onReadyRead",
+        "stopUdpListening"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -76,16 +90,44 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
         }}),
         // Slot 'disconnectFromHost'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'sendMessage'
+        QtMocHelpers::SlotData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
+        }}),
+        // Slot 'startServerScreencast'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'stopServerScreencast'
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'startScreencast'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'stopScreencast'
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'setUdpAddress'
+        QtMocHelpers::SlotData<void(QString)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 17 },
+        }}),
+        // Slot 'setUdpPort'
+        QtMocHelpers::SlotData<void(int)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 19 },
+        }}),
+        // Slot 'SHOWMES'
+        QtMocHelpers::SlotData<void(QString)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 21 },
+        }}),
+        // Slot 'getUdpAddress'
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onSocketError'
-        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 11, 12 },
+        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 24, 25 },
         }}),
         // Slot 'onDisconnected'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onTcpConnected'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onReadyRead'
-        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'stopUdpListening'
+        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -114,17 +156,27 @@ void SenderClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 2: _t->clientEvent((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 3: _t->messageReceived((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1]))); break;
         case 4: _t->disconnectFromHost(); break;
-        case 5: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
-        case 6: _t->onDisconnected(); break;
-        case 7: _t->onTcpConnected(); break;
-        case 8: _t->onReadyRead(); break;
+        case 5: _t->sendMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 6: _t->startServerScreencast(); break;
+        case 7: _t->stopServerScreencast(); break;
+        case 8: _t->startScreencast(); break;
+        case 9: _t->stopScreencast(); break;
+        case 10: _t->setUdpAddress((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 11: _t->setUdpPort((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 12: _t->SHOWMES((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 13: _t->getUdpAddress(); break;
+        case 14: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
+        case 15: _t->onDisconnected(); break;
+        case 16: _t->onTcpConnected(); break;
+        case 17: _t->onReadyRead(); break;
+        case 18: _t->stopUdpListening(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 5:
+        case 14:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -164,14 +216,14 @@ int SenderClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 19;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 19;
     }
     return _id;
 }

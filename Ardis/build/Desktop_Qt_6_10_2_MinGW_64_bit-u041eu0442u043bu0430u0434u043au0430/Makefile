@@ -296,6 +296,78 @@ receiverobject.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/receiverobject.cpp.s
 .PHONY : receiverobject.cpp.s
 
+screenbase.obj: screenbase.cpp.obj
+.PHONY : screenbase.obj
+
+# target to build an object file
+screenbase.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenbase.cpp.obj
+.PHONY : screenbase.cpp.obj
+
+screenbase.i: screenbase.cpp.i
+.PHONY : screenbase.i
+
+# target to preprocess a source file
+screenbase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenbase.cpp.i
+.PHONY : screenbase.cpp.i
+
+screenbase.s: screenbase.cpp.s
+.PHONY : screenbase.s
+
+# target to generate assembly for a file
+screenbase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenbase.cpp.s
+.PHONY : screenbase.cpp.s
+
+screenhandler.obj: screenhandler.cpp.obj
+.PHONY : screenhandler.obj
+
+# target to build an object file
+screenhandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenhandler.cpp.obj
+.PHONY : screenhandler.cpp.obj
+
+screenhandler.i: screenhandler.cpp.i
+.PHONY : screenhandler.i
+
+# target to preprocess a source file
+screenhandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenhandler.cpp.i
+.PHONY : screenhandler.cpp.i
+
+screenhandler.s: screenhandler.cpp.s
+.PHONY : screenhandler.s
+
+# target to generate assembly for a file
+screenhandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenhandler.cpp.s
+.PHONY : screenhandler.cpp.s
+
+screenreceiver.obj: screenreceiver.cpp.obj
+.PHONY : screenreceiver.obj
+
+# target to build an object file
+screenreceiver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenreceiver.cpp.obj
+.PHONY : screenreceiver.cpp.obj
+
+screenreceiver.i: screenreceiver.cpp.i
+.PHONY : screenreceiver.i
+
+# target to preprocess a source file
+screenreceiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenreceiver.cpp.i
+.PHONY : screenreceiver.cpp.i
+
+screenreceiver.s: screenreceiver.cpp.s
+.PHONY : screenreceiver.s
+
+# target to generate assembly for a file
+screenreceiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/screenreceiver.cpp.s
+.PHONY : screenreceiver.cpp.s
+
 senderclient.obj: senderclient.cpp.obj
 .PHONY : senderclient.obj
 
@@ -371,6 +443,15 @@ help:
 	@echo ... receiverobject.obj
 	@echo ... receiverobject.i
 	@echo ... receiverobject.s
+	@echo ... screenbase.obj
+	@echo ... screenbase.i
+	@echo ... screenbase.s
+	@echo ... screenhandler.obj
+	@echo ... screenhandler.i
+	@echo ... screenhandler.s
+	@echo ... screenreceiver.obj
+	@echo ... screenreceiver.i
+	@echo ... screenreceiver.s
 	@echo ... senderclient.obj
 	@echo ... senderclient.i
 	@echo ... senderclient.s

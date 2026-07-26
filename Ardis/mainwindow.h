@@ -35,6 +35,12 @@ private slots:
     void disconnectFromServer();
     void disconnectClient();
     void stopServer();
+    void startMyScreenCast();
+    void startServerScreencast();
+    void stopScreenCast();
+    void applyUdpSettings(QString address, int port);
+    // для разработки
+    void checkUdpAddress();
 
 };
 #endif // MAINWINDOW_H

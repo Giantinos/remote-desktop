@@ -34,6 +34,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         receiverobject.h receiverobject.cpp
         sessionmanager.h sessionmanager.cpp
         params.h
+
+        screenhandler.h screenhandler.cpp
+        screenreceiver.h screenreceiver.cpp
+        screenbase.h screenbase.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Ardis APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

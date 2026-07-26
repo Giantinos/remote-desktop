@@ -431,6 +431,24 @@
 			null
 		],
 		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.h",
+			"MU",
+			"EWIEGA46WW/moc_screenbase.cpp",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.h",
+			"MU",
+			"EWIEGA46WW/moc_screenhandler.cpp",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.h",
+			"MU",
+			"EWIEGA46WW/moc_screenreceiver.cpp",
+			null
+		],
+		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h",
 			"MU",
 			"EWIEGA46WW/moc_senderclient.cpp",
@@ -525,6 +543,21 @@
 		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.cpp",
 			"MU",
 			null
 		],

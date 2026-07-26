@@ -9,6 +9,7 @@
 #include "../../../../receiverobject.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
+#include <QtCore/QList>
 
 #include <QtCore/qtmochelpers.h>
 
@@ -44,9 +45,27 @@ template <> constexpr inline auto ReceiverObject::qt_create_metaobjectdata<qt_me
         "",
         "message",
         "warning",
+        "sendMessage",
+        "text",
+        "startServerScreencast",
+        "stopServerScreencast",
+        "startScreencast",
+        "stopScreencast",
+        "getUdpAddress",
         "onNewConnection",
         "onReadyRead",
-        "onClientDisconnected"
+        "onUdpDataReceived",
+        "onClientDisconnected",
+        "hasActiveClient",
+        "sendPacket",
+        "type",
+        "data",
+        "writeUdpDatagram",
+        "QByteArray&",
+        "sendChunks",
+        "QList<DataChunk>",
+        "chunks",
+        "writeUdpTest"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -58,12 +77,48 @@ template <> constexpr inline auto ReceiverObject::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SignalData<void(QString)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
+        // Slot 'sendMessage'
+        QtMocHelpers::SlotData<void(const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 6 },
+        }}),
+        // Slot 'startServerScreencast'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'stopServerScreencast'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'startScreencast'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'stopScreencast'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'getUdpAddress'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onNewConnection'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onReadyRead'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onUdpDataReceived'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onClientDisconnected'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'hasActiveClient'
+        QtMocHelpers::SlotData<bool()>(16, 2, QMC::AccessPrivate, QMetaType::Bool),
+        // Slot 'sendPacket'
+        QtMocHelpers::SlotData<void(const QString &, const QString &)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 18 }, { QMetaType::QString, 19 },
+        }}),
+        // Slot 'sendPacket'
+        QtMocHelpers::SlotData<void(const QString &)>(17, 2, QMC::AccessPrivate | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QString, 18 },
+        }}),
+        // Slot 'writeUdpDatagram'
+        QtMocHelpers::SlotData<void(QByteArray &)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 21, 19 },
+        }}),
+        // Slot 'sendChunks'
+        QtMocHelpers::SlotData<void(const QVector<DataChunk> &)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 24 },
+        }}),
+        // Slot 'writeUdpTest'
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -89,9 +144,23 @@ void ReceiverObject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->serverStatusChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 1: _t->warning((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 2: _t->onNewConnection(); break;
-        case 3: _t->onReadyRead(); break;
-        case 4: _t->onClientDisconnected(); break;
+        case 2: _t->sendMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->startServerScreencast(); break;
+        case 4: _t->stopServerScreencast(); break;
+        case 5: _t->startScreencast(); break;
+        case 6: _t->stopScreencast(); break;
+        case 7: _t->getUdpAddress(); break;
+        case 8: _t->onNewConnection(); break;
+        case 9: _t->onReadyRead(); break;
+        case 10: _t->onUdpDataReceived(); break;
+        case 11: _t->onClientDisconnected(); break;
+        case 12: { bool _r = _t->hasActiveClient();
+            if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
+        case 13: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 14: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 15: _t->writeUdpDatagram((*reinterpret_cast<std::add_pointer_t<QByteArray&>>(_a[1]))); break;
+        case 16: _t->sendChunks((*reinterpret_cast<std::add_pointer_t<QList<DataChunk>>>(_a[1]))); break;
+        case 17: _t->writeUdpTest(); break;
         default: ;
         }
     }
@@ -122,14 +191,14 @@ int ReceiverObject::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 18;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 18;
     }
     return _id;
 }

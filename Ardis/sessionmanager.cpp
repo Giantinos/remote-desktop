@@ -94,8 +94,8 @@ void SessionManager::onClientDisconnected(){
         disableButton(sendMessageButton);
     if(isButtonOk(disconnectClientButton))
         disableButton(disconnectClientButton);
-    if(isButtonOk(sendMessageButton))
-        disableButton(sendMessageButton);
+    // if(isButtonOk(sendMessageButton))
+    //     disableButton(sendMessageButton);
 }
 
 void SessionManager::onServerStarted(){
