@@ -29,7 +29,7 @@ public:
     int getServerStatus();
     QString getStringServerStatus();
     QAbstractSocket::SocketState checkClientState();
-    void setUdpAddress(QString addr);
+
     void setUdpPort(int port);
 // для отладки
     void SHOWMES(QString s){
@@ -42,6 +42,7 @@ public slots:
     void stopServerScreencast();
     void startScreencast();
     void stopScreencast();
+    void setUdpAddress(QString addr);
     // для разработки
     QHostAddress& getUdpAddress(){
         return m_uaddress;

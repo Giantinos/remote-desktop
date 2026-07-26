@@ -72,7 +72,10 @@ MainWindow::MainWindow(QWidget *parent)
     resize(1330, 600);
 
     // ---- Udp settings sector ----
-    // connect(ui->pushButton_applyUdpSettings, &QPushButton::click, this,   &MainWindow::applyUdpSettings);
+    connect(ui->pushButton_applyUdpSettings, &QPushButton::clicked, this, [&](){
+        qDebug() << "[Main window] button apply udp settings";
+        MainWindow::applyUdpSettings();
+    });
 
     // ====Server====
 
@@ -168,6 +171,14 @@ void MainWindow::applyUdpSettings(QString address, int port){
     receiverObject->setUdpPort(port);
     senderClient->setUdpAddress(address);
     senderClient->setUdpPort(port);
+}
+
+void MainWindow::applyUdpSettings(){
+    qDebug() << "[Main window] applyUDPSettings()";
+    receiverObject->setUdpAddress(ui->lineEdit_udpAddress->text()) ;
+    receiverObject->setUdpPort(ui->lineEdit_udpPort->text().toInt());
+    senderClient->setUdpAddress(ui->lineEdit_udpAddress->text());
+    senderClient->setUdpPort(ui->lineEdit_udpPort->text().toInt());
 }
 
 void MainWindow::checkUdpAddress(){

@@ -51,6 +51,8 @@ template <> constexpr inline auto ReceiverObject::qt_create_metaobjectdata<qt_me
         "stopServerScreencast",
         "startScreencast",
         "stopScreencast",
+        "setUdpAddress",
+        "addr",
         "getUdpAddress",
         "onNewConnection",
         "onReadyRead",
@@ -89,36 +91,40 @@ template <> constexpr inline auto ReceiverObject::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'stopScreencast'
         QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'setUdpAddress'
+        QtMocHelpers::SlotData<void(QString)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 12 },
+        }}),
         // Slot 'getUdpAddress'
-        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onNewConnection'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onReadyRead'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onUdpDataReceived'
         QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onClientDisconnected'
+        // Slot 'onReadyRead'
         QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onUdpDataReceived'
+        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onClientDisconnected'
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'hasActiveClient'
-        QtMocHelpers::SlotData<bool()>(16, 2, QMC::AccessPrivate, QMetaType::Bool),
+        QtMocHelpers::SlotData<bool()>(18, 2, QMC::AccessPrivate, QMetaType::Bool),
         // Slot 'sendPacket'
-        QtMocHelpers::SlotData<void(const QString &, const QString &)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 18 }, { QMetaType::QString, 19 },
+        QtMocHelpers::SlotData<void(const QString &, const QString &)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 20 }, { QMetaType::QString, 21 },
         }}),
         // Slot 'sendPacket'
-        QtMocHelpers::SlotData<void(const QString &)>(17, 2, QMC::AccessPrivate | QMC::MethodCloned, QMetaType::Void, {{
-            { QMetaType::QString, 18 },
+        QtMocHelpers::SlotData<void(const QString &)>(19, 2, QMC::AccessPrivate | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QString, 20 },
         }}),
         // Slot 'writeUdpDatagram'
-        QtMocHelpers::SlotData<void(QByteArray &)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 21, 19 },
+        QtMocHelpers::SlotData<void(QByteArray &)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 23, 21 },
         }}),
         // Slot 'sendChunks'
-        QtMocHelpers::SlotData<void(const QVector<DataChunk> &)>(22, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 23, 24 },
+        QtMocHelpers::SlotData<void(const QVector<DataChunk> &)>(24, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 25, 26 },
         }}),
         // Slot 'writeUdpTest'
-        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -149,18 +155,19 @@ void ReceiverObject::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 4: _t->stopServerScreencast(); break;
         case 5: _t->startScreencast(); break;
         case 6: _t->stopScreencast(); break;
-        case 7: _t->getUdpAddress(); break;
-        case 8: _t->onNewConnection(); break;
-        case 9: _t->onReadyRead(); break;
-        case 10: _t->onUdpDataReceived(); break;
-        case 11: _t->onClientDisconnected(); break;
-        case 12: { bool _r = _t->hasActiveClient();
+        case 7: _t->setUdpAddress((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 8: _t->getUdpAddress(); break;
+        case 9: _t->onNewConnection(); break;
+        case 10: _t->onReadyRead(); break;
+        case 11: _t->onUdpDataReceived(); break;
+        case 12: _t->onClientDisconnected(); break;
+        case 13: { bool _r = _t->hasActiveClient();
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 13: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
-        case 14: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 15: _t->writeUdpDatagram((*reinterpret_cast<std::add_pointer_t<QByteArray&>>(_a[1]))); break;
-        case 16: _t->sendChunks((*reinterpret_cast<std::add_pointer_t<QList<DataChunk>>>(_a[1]))); break;
-        case 17: _t->writeUdpTest(); break;
+        case 14: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 15: _t->sendPacket((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 16: _t->writeUdpDatagram((*reinterpret_cast<std::add_pointer_t<QByteArray&>>(_a[1]))); break;
+        case 17: _t->sendChunks((*reinterpret_cast<std::add_pointer_t<QList<DataChunk>>>(_a[1]))); break;
+        case 18: _t->writeUdpTest(); break;
         default: ;
         }
     }
@@ -191,14 +198,14 @@ int ReceiverObject::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 19;
     }
     return _id;
 }

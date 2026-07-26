@@ -39,6 +39,7 @@ private slots:
     void startServerScreencast();
     void stopScreenCast();
     void applyUdpSettings(QString address, int port);
+    void applyUdpSettings();
     // для разработки
     void checkUdpAddress();
 

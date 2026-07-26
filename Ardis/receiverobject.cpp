@@ -9,6 +9,7 @@ ReceiverObject::ReceiverObject(QTextEdit *textWidget, QObject *parent)
     this->textWidget = textWidget;
     server = new QTcpServer(this);
     m_usocket = new QUdpSocket(this);
+    client = nullptr;
 
     serverStatus = ServerState::STOPPED;
     clientAuthenticated = false;
@@ -301,7 +302,6 @@ QString ReceiverObject::getStringServerStatus(){
 }
 
 void ReceiverObject::stopServer(){
-
     auto executeCloseServer= [this]() {
         if (server && server->isListening()) {
             server->close();
@@ -313,7 +313,7 @@ void ReceiverObject::stopServer(){
         }
     };
     if(hasActiveClient()){
-        if(client->state() == QAbstractSocket::ConnectedState){
+        qDebug() << "[Server] has active client";
             QMessageBox::StandardButton reply;
             reply = QMessageBox::question(nullptr,
                                           "Warning",           // Заголовок
@@ -324,10 +324,10 @@ void ReceiverObject::stopServer(){
                 disconnectClient();
                 executeCloseServer();
             }
-        }
-    } else executeCloseServer();
+    }
+    else executeCloseServer();
 }
-
+// крашится при остановке сервера, возможно client не существует
 bool ReceiverObject::hasActiveClient()  {
     return client && client->state() == QAbstractSocket::ConnectedState;
 }
@@ -400,6 +400,7 @@ void ReceiverObject::setUdpPort(int l_port){
     else emit warning("Invalid port");
 }
 void ReceiverObject::setUdpAddress(QString addr){
+    qDebug() << "[Server] set up UDP address";
     QHostAddress a(addr);
     if(!a.isNull() && a.protocol() == QAbstractSocket::IPv4Protocol)
         this->m_uaddress.setAddress(addr);
