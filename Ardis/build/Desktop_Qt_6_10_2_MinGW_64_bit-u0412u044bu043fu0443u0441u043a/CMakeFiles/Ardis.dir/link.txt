@@ -1,3 +1,0 @@
-C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\Ardis.dir/objects.a
-C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\Ardis.dir/objects.a @CMakeFiles\Ardis.dir\objects1.rsp
-C:\Qt\Tools\mingw1310_64\bin\g++.exe -O3 -DNDEBUG -mwindows -Wl,--whole-archive CMakeFiles\Ardis.dir/objects.a -Wl,--no-whole-archive -o Ardis.exe -Wl,--out-implib,libArdis.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Ardis.dir\linkLibs.rsp

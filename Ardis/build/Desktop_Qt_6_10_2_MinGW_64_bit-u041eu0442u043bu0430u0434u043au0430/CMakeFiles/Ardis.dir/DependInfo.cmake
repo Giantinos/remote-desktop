@@ -9,7 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "Ardis_autogen/timestamp" "custom" "Ardis_autogen/deps"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/qrc_res.cpp" "CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/mocs_compilation.cpp" "CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj.d"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.cpp" "CMakeFiles/Ardis.dir/common.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/common.cpp.obj.d"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.cpp" "CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp" "CMakeFiles/Ardis.dir/main.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/main.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp" "CMakeFiles/Ardis.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/mainwindow.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp" "CMakeFiles/Ardis.dir/receiverobject.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/receiverobject.cpp.obj.d"
@@ -17,7 +20,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.cpp" "CMakeFiles/Ardis.dir/screenhandler.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/screenhandler.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.cpp" "CMakeFiles/Ardis.dir/screenreceiver.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/screenreceiver.cpp.obj.d"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp" "CMakeFiles/Ardis.dir/senderclient.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/senderclient.cpp.obj.d"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp" "CMakeFiles/Ardis.dir/sessionmanager.cpp.obj" "gcc" "CMakeFiles/Ardis.dir/sessionmanager.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

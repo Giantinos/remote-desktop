@@ -404,7 +404,8 @@
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/res.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis",
 	"CROSS_CONFIG" : false,
@@ -412,6 +413,18 @@
 	"DEP_FILE_RULE_NAME" : "Ardis_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.h",
+			"MU",
+			"EWIEGA46WW/moc_common.cpp",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.h",
+			"MU",
+			"EWIEGA46WW/moc_keyboardcapture.cpp",
+			null
+		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h",
 			"MU",
@@ -452,12 +465,6 @@
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h",
 			"MU",
 			"EWIEGA46WW/moc_senderclient.cpp",
-			null
-		],
-		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h",
-			"MU",
-			"EWIEGA46WW/moc_sessionmanager.cpp",
 			null
 		]
 	],
@@ -535,6 +542,12 @@
 	"SETTINGS_FILE" : "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/Ardis_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.cpp", "MU", null ],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.cpp",
+			"MU",
+			null
+		],
 		[ "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp", "MU", null ],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp",
@@ -563,11 +576,6 @@
 		],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp",
 			"MU",
 			null
 		]

@@ -52,6 +52,7 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiterator.h \
@@ -139,6 +140,13 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -345,4 +353,5 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.h

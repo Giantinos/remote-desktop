@@ -82,16 +82,26 @@ private:
     void stopUdpListening();
     ScreenHandler* screen;
     ScreenReceiver* videoStream;
+    void sendNextChunk(const QVector<DataChunk> &chunks, int index);
 
 
 signals:
-    void serverStatusChanged(QString message);
+    void serverSignalInfo(QString message);
+    void connectionChanged(int status);
     void warning(QString message);
 };
 
+/*
+ * STOPPED,
+ * STARTED,
+ * INCOMING_CONNECTION,
+ * CLIENT_CONNECTED,
+ * S_ERROR
+ */
 enum ServerState{
     STOPPED,
     STARTED,
+    INCOMING_CONNECTION,
     CLIENT_CONNECTED,
     S_ERROR
 };

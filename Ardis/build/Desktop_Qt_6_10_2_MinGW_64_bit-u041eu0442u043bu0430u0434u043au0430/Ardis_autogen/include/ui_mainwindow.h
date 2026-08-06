@@ -10,17 +10,23 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QDockWidget>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +34,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *action_Debug_view;
     QWidget *centralwidget;
     QTextEdit *textWidget;
     QLineEdit *lineEdit_messageToSend;
@@ -64,28 +71,40 @@ public:
     QPushButton *pushButton_applyUdpSettings;
     QRadioButton *radioButton_virtualMachine;
     QRadioButton *radioButton_host;
+    QCheckBox *checkBox_useManualSettings;
     QMenuBar *menubar;
     QStatusBar *statusbar;
+    QToolBar *toolBar;
+    QDockWidget *dockWidget_debug;
+    QWidget *dockWidgetContents_4;
+    QVBoxLayout *verticalLayout;
+    QPlainTextEdit *plainTextEdit_debug;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(1330, 600);
+        MainWindow->setUnifiedTitleAndToolBarOnMac(true);
+        action_Debug_view = new QAction(MainWindow);
+        action_Debug_view->setObjectName("action_Debug_view");
+        action_Debug_view->setCheckable(true);
+        action_Debug_view->setChecked(false);
+        action_Debug_view->setMenuRole(QAction::MenuRole::NoRole);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         textWidget = new QTextEdit(centralwidget);
         textWidget->setObjectName("textWidget");
-        textWidget->setGeometry(QRect(800, 10, 191, 451));
+        textWidget->setGeometry(QRect(800, 10, 191, 381));
         textWidget->setReadOnly(true);
         lineEdit_messageToSend = new QLineEdit(centralwidget);
         lineEdit_messageToSend->setObjectName("lineEdit_messageToSend");
-        lineEdit_messageToSend->setGeometry(QRect(800, 470, 191, 51));
+        lineEdit_messageToSend->setGeometry(QRect(800, 400, 191, 51));
         lineEdit_messageToSend->setMaxLength(256);
         lineEdit_messageToSend->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop);
         pushButton_sendMessage = new QPushButton(centralwidget);
         pushButton_sendMessage->setObjectName("pushButton_sendMessage");
-        pushButton_sendMessage->setGeometry(QRect(900, 530, 91, 24));
+        pushButton_sendMessage->setGeometry(QRect(900, 460, 91, 24));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(1000, 10, 321, 161));
@@ -181,58 +200,92 @@ public:
         pushButton_disconnectClient->setGeometry(QRect(170, 70, 111, 24));
         DisplayWidget_label = new QLabel(centralwidget);
         DisplayWidget_label->setObjectName("DisplayWidget_label");
-        DisplayWidget_label->setGeometry(QRect(10, 10, 640, 480));
+        DisplayWidget_label->setGeometry(QRect(10, 10, 781, 441));
         DisplayWidget_label->setFrameShape(QFrame::Shape::Box);
         DisplayWidget_label->setLineWidth(1);
         DisplayWidget_label->setMidLineWidth(0);
         pushButton_startServerScreenCast = new QPushButton(centralwidget);
         pushButton_startServerScreenCast->setObjectName("pushButton_startServerScreenCast");
-        pushButton_startServerScreenCast->setGeometry(QRect(360, 500, 101, 24));
+        pushButton_startServerScreenCast->setGeometry(QRect(496, 460, 101, 24));
         pushButton_startMyScreenCast = new QPushButton(centralwidget);
         pushButton_startMyScreenCast->setObjectName("pushButton_startMyScreenCast");
-        pushButton_startMyScreenCast->setGeometry(QRect(470, 500, 91, 24));
+        pushButton_startMyScreenCast->setGeometry(QRect(606, 460, 91, 24));
         pushButton_stopScreencast = new QPushButton(centralwidget);
         pushButton_stopScreencast->setObjectName("pushButton_stopScreencast");
-        pushButton_stopScreencast->setGeometry(QRect(564, 500, 91, 24));
+        pushButton_stopScreencast->setGeometry(QRect(700, 460, 91, 24));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(1000, 280, 191, 111));
+        groupBox_3->setGeometry(QRect(1000, 280, 191, 141));
         lineEdit_udpAddress = new QLineEdit(groupBox_3);
         lineEdit_udpAddress->setObjectName("lineEdit_udpAddress");
-        lineEdit_udpAddress->setGeometry(QRect(40, 20, 91, 22));
+        lineEdit_udpAddress->setGeometry(QRect(40, 50, 91, 22));
         lineEdit_udpAddress->setMaxLength(15);
         lineEdit_udpAddress->setClearButtonEnabled(true);
         lineEdit_udpPort = new QLineEdit(groupBox_3);
         lineEdit_udpPort->setObjectName("lineEdit_udpPort");
         lineEdit_udpPort->setEnabled(false);
-        lineEdit_udpPort->setGeometry(QRect(40, 50, 41, 22));
+        lineEdit_udpPort->setGeometry(QRect(40, 80, 41, 22));
         lineEdit_udpPort->setMaxLength(5);
         lineEdit_udpPort->setFrame(true);
         lineEdit_udpPort->setReadOnly(false);
         lineEdit_udpPort->setClearButtonEnabled(false);
         label_4 = new QLabel(groupBox_3);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(10, 20, 21, 16));
+        label_4->setGeometry(QRect(10, 50, 21, 16));
         label_5 = new QLabel(groupBox_3);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 50, 31, 16));
+        label_5->setGeometry(QRect(10, 80, 31, 16));
         pushButton_applyUdpSettings = new QPushButton(groupBox_3);
         pushButton_applyUdpSettings->setObjectName("pushButton_applyUdpSettings");
-        pushButton_applyUdpSettings->setGeometry(QRect(30, 80, 61, 24));
+        pushButton_applyUdpSettings->setGeometry(QRect(30, 110, 61, 24));
         radioButton_virtualMachine = new QRadioButton(groupBox_3);
         radioButton_virtualMachine->setObjectName("radioButton_virtualMachine");
-        radioButton_virtualMachine->setGeometry(QRect(140, 20, 41, 20));
+        radioButton_virtualMachine->setGeometry(QRect(140, 50, 41, 20));
         radioButton_host = new QRadioButton(groupBox_3);
         radioButton_host->setObjectName("radioButton_host");
-        radioButton_host->setGeometry(QRect(140, 50, 51, 20));
+        radioButton_host->setGeometry(QRect(140, 80, 51, 20));
+        checkBox_useManualSettings = new QCheckBox(groupBox_3);
+        checkBox_useManualSettings->setObjectName("checkBox_useManualSettings");
+        checkBox_useManualSettings->setGeometry(QRect(10, 20, 131, 21));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1330, 22));
+        menubar->setGeometry(QRect(0, 0, 1330, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName("toolBar");
+        MainWindow->addToolBar(Qt::ToolBarArea::TopToolBarArea, toolBar);
+        dockWidget_debug = new QDockWidget(MainWindow);
+        dockWidget_debug->setObjectName("dockWidget_debug");
+        dockWidget_debug->setEnabled(true);
+        dockWidget_debug->setMinimumSize(QSize(88, 106));
+        dockWidget_debug->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        dockWidget_debug->setAutoFillBackground(false);
+        dockWidget_debug->setFloating(false);
+        dockWidget_debug->setDockLocation(Qt::DockWidgetArea::BottomDockWidgetArea);
+        dockWidgetContents_4 = new QWidget();
+        dockWidgetContents_4->setObjectName("dockWidgetContents_4");
+        verticalLayout = new QVBoxLayout(dockWidgetContents_4);
+        verticalLayout->setObjectName("verticalLayout");
+        plainTextEdit_debug = new QPlainTextEdit(dockWidgetContents_4);
+        plainTextEdit_debug->setObjectName("plainTextEdit_debug");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Maximum, QSizePolicy::Policy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(plainTextEdit_debug->sizePolicy().hasHeightForWidth());
+        plainTextEdit_debug->setSizePolicy(sizePolicy);
+        plainTextEdit_debug->setMaximumSize(QSize(980, 500));
+        plainTextEdit_debug->setReadOnly(true);
+
+        verticalLayout->addWidget(plainTextEdit_debug);
+
+        dockWidget_debug->setWidget(dockWidgetContents_4);
+        MainWindow->addDockWidget(Qt::DockWidgetArea::BottomDockWidgetArea, dockWidget_debug);
+
+        toolBar->addAction(action_Debug_view);
 
         retranslateUi(MainWindow);
 
@@ -242,6 +295,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        action_Debug_view->setText(QCoreApplication::translate("MainWindow", "Debug view", nullptr));
         lineEdit_messageToSend->setInputMask(QString());
         lineEdit_messageToSend->setText(QString());
         lineEdit_messageToSend->setPlaceholderText(QCoreApplication::translate("MainWindow", "Input your message...", nullptr));
@@ -279,6 +333,10 @@ public:
         pushButton_applyUdpSettings->setText(QCoreApplication::translate("MainWindow", "Apply", nullptr));
         radioButton_virtualMachine->setText(QCoreApplication::translate("MainWindow", "VM", nullptr));
         radioButton_host->setText(QCoreApplication::translate("MainWindow", "Host", nullptr));
+        checkBox_useManualSettings->setText(QCoreApplication::translate("MainWindow", "Use manual settings", nullptr));
+        toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
+        dockWidget_debug->setWindowTitle(QCoreApplication::translate("MainWindow", "Debug view", nullptr));
+        plainTextEdit_debug->setPlainText(QString());
     } // retranslateUi
 
 };

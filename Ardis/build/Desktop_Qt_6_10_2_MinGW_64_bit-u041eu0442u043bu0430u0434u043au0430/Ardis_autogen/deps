@@ -3,6 +3,7 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QList \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+	C:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
@@ -150,6 +151,7 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QGuiApplication \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QImage \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/QKeyEvent \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QPixmap \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QScreen \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
@@ -158,6 +160,8 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qfont.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qfontinfo.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
@@ -166,6 +170,7 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
@@ -174,6 +179,7 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
@@ -188,14 +194,18 @@ Ardis_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/QHostAddress \
+	C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpServer \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/QTcpSocket \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/QUdpSocket \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpserver.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtcpsocket.h \
 	C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
@@ -658,12 +668,17 @@ Ardis_autogen/timestamp: \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.cpp \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.h \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.cpp \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h \
+	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/res.qrc \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenhandler.cpp \
@@ -672,7 +687,5 @@ Ardis_autogen/timestamp: \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenreceiver.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.h \
-	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp \
-	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.h \
 	D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

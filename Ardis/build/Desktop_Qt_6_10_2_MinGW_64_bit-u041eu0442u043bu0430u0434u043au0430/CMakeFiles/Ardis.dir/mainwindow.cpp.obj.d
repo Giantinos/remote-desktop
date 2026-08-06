@@ -366,6 +366,15 @@ CMakeFiles/Ardis.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QScreen \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QList \
@@ -409,12 +418,6 @@ CMakeFiles/Ardis.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QUdpSocket \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qudpsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenreceiver.h \
@@ -464,12 +467,18 @@ CMakeFiles/Ardis.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
- D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.h \
  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/include/ui_mainwindow.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QCheckBox \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qcheckbox.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QDockWidget \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdockwidget.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGroupBox \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgroupbox.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
@@ -485,14 +494,31 @@ CMakeFiles/Ardis.dir/mainwindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QPlainTextEdit \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qplaintextedit.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtextedit.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qtextlayout.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qglyphrun.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qrawfont.h \
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qfontdatabase.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
- C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QRadioButton \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qradiobutton.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QTextEdit \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtoolbar.h \
+ C:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QImageReader \

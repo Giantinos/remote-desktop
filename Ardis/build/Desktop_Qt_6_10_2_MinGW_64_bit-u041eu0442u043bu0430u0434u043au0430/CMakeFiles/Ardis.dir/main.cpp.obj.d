@@ -366,6 +366,15 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QScreen \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QList \
@@ -409,12 +418,6 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QUdpSocket \
  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qudpsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
  D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenreceiver.h \
@@ -464,10 +467,42 @@ CMakeFiles/Ardis.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
- D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QTranslator \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtranslator.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QLocale \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QFile \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_path.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
+ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/codecvt \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_dir.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h

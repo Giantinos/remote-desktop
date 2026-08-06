@@ -1,4 +1,3 @@
-
 #include "screenreceiver.h"
 #include <QBuffer>
 #include <QImageReader>
@@ -13,15 +12,16 @@ ScreenReceiver::ScreenReceiver(QObject* parent)
 // сам привязывается к сокету
 void ScreenReceiver::startReceiving()
 {
-    // запущен ли процесс получения
+    DEBUG("[Video] Start receiving");
+
     if(m_isReceiving){
         emit errorOccurred("Already receiving");
-        qDebug() << "Already receiving";
+        DEBUG("Already receiving");
         return;
     }
 
     // проверка сокета
-    if (!m_socket) {
+    if (!m_socket){
         emit errorOccurred("Socket not set");
         return;
     }
@@ -30,7 +30,7 @@ void ScreenReceiver::startReceiving()
     if(!m_displayWidget){
         emit errorOccurred("Display not set");
         return;
-    } else { qDebug() << "Display ready" ;}
+    } else { DEBUG("Display ready"); }
 
     // подготовка членов класса
     m_isReceiving = true;
@@ -41,19 +41,26 @@ void ScreenReceiver::startReceiving()
     m_expectedSize = 0;
 
     // соединение сокета с событием получения
-
     // ИСПРАВИТЬ МАГИЧЕСКОЕ ЧИСЛО
-    if(m_socket->bind(QHostAddress::Any, 8001)){
-        qDebug() << "Bind usocket sucess";
+    // QHostAddress address("10.0.2.15");
+    if(m_socket->bind(QHostAddress::AnyIPv4, 8001)){
+        QString msg = "[Video] Bind usocket sucess "
+                        + m_socket->localAddress().toString()
+                        + ":" + QString::number(m_socket->localPort());
+        qDebug() << msg;
+        DEBUG(msg);
 
         connect(m_socket, &QUdpSocket::readyRead,
             this, &ScreenReceiver::onSocketReadyRead);
     }else {
         qDebug() << "Couldnt bind socket";
+        DEBUG("[Video] Couldnt bind socket");
 
         emit errorOccurred("Error: couldnt start UDP listening");
     }
     emit receivingStarted();
+
+    DEBUG("[Video] receiving started");
     qDebug() << "Screen receiving started";
 }
 
@@ -69,6 +76,7 @@ void ScreenReceiver::stopReceiving(){
     m_receiveBuffer.clear();
     emit receivingStopped();
     qDebug() << "Screen receiving stopped";
+    DEBUG("[Video] Screen receiving stopped");
 }
 
 auto ScreenReceiver::findImageInAssemblyBuffer(){
@@ -87,25 +95,28 @@ auto ScreenReceiver::findImageInAssemblyBuffer(){
     }
     return it;
 }
-
+// получение
 void ScreenReceiver::onSocketReadyRead() {
     qDebug() << "[Video] onSocketReadyRead()";
+    DEBUG("[Video] onSocketReadyRead()");
 
     // проверка сокета
     if (!m_socket) {
         qDebug() << "VideoStream:: socket is nullptr";
+        DEBUG("VideoStream:: socket is nullptr");
         return;
     }
 
     while(m_socket->hasPendingDatagrams()){
         qDebug() << "[Video] hasPendingDatagrams()";
-
+        DEBUG("[Video] hasPendingDatagrams()");
         // читаем данные из сокета
         getImageDataFromUdpSocket();
 
         // распаковка фрагмента
         if(!convertBytesToImageChunk()){
             qDebug() << "[Video] Error parsing datagrtam";
+            DEBUG("[Video] Error parsing datagrtam");
             continue;
         }
 
@@ -128,15 +139,24 @@ void ScreenReceiver::onSocketReadyRead() {
 }
 
 void ScreenReceiver::getImageDataFromUdpSocket(){
-    qDebug() << "[Video] pending data size: " << m_socket->pendingDatagramSize();
-    qDebug() << "[Video] buffer capacity: " << m_receiveBuffer.capacity();
+// Debug
+    {
+        qDebug() << "[Video] pending data size: " << m_socket->pendingDatagramSize();
+        qDebug() << "[Video] buffer capacity: " << m_receiveBuffer.capacity();
+        DEBUG("[Video] pending data size: " + QString::number(m_socket->pendingDatagramSize()));
+        DEBUG("[Video] buffer capacity: " + QString::number(m_receiveBuffer.capacity()));
+    }
+
     if(m_receiveBuffer.size() != m_socket->pendingDatagramSize()){
         qDebug() << "[Video] Resizing buffer";
+        DEBUG("[Video] Resizing buffer");
         m_receiveBuffer.resize(m_socket->pendingDatagramSize());
     }
     qDebug() << "[Video] buffer data bytes: " << m_receiveBuffer.size();
+    DEBUG("[Video] buffer data bytes: " + QString::number(m_receiveBuffer.size()));
     int bytesRead = m_socket->readDatagram(m_receiveBuffer.data(), m_socket->pendingDatagramSize());
     qDebug() << "[Video] read bytes: " << bytesRead;
+    DEBUG("[Video] read bytes: " + QString::number(bytesRead));
 }
 
 // return true если успешно
@@ -146,11 +166,21 @@ bool ScreenReceiver::convertBytesToImageChunk(){
         >> m_dchunk.total
         >> m_dchunk.current
         >> m_dchunk.data;
-    qDebug() << "[Video] decoding chunk: id:" << m_dchunk.id
-             << " total:" << m_dchunk.total
-             <<  " current:" << m_dchunk.current
-             << " data.size:" << m_dchunk.data.size();
-    qDebug() << "[Video] m_stream status: " << m_stream.status();
+    // Debug
+    {
+        qDebug() << "[Video] decoding chunk: id:" << m_dchunk.id
+                 << " total:" << m_dchunk.total
+                 <<  " current:" << m_dchunk.current
+                 << " data.size:" << m_dchunk.data.size();
+        qDebug() << "[Video] m_stream status: " << m_stream.status();
+        DEBUG("[Video] decoding chunk: id:" + QString::number(m_dchunk.id)
+                                          + " total:" + QString::number(m_dchunk.total)
+                                          +  " current:" + QString::number(m_dchunk.current)
+                                          + " data.size:" + QString::number(m_dchunk.data.size())
+            );
+        DEBUG("[Video] m_stream status: " + QString::number(m_stream.status()));
+    }
+
     return m_stream.status() == QDataStream::Ok;
 }
 
@@ -179,9 +209,13 @@ void ScreenReceiver::joinChunkToImage(ImageAssembly &assembly){
                           m_dchunk.data.size(),
                           m_dchunk.data);
     assembly.received++;
+    DEBUG("[Video] Assembling image "
+          + QString::number(m_dchunk.current)
+          + "/" + QString::number(m_dchunk.total));
 }
 void ScreenReceiver::onAllChunksReceived(ImageAssembly &assembly){
     if (assembly.received == assembly.total) {
+        DEBUG("[Video] Image done");
         // Полное изображение готово!
         QByteArray fullImage = assembly.data.left(assembly.received * CHUNK_SIZE);
         processData(fullImage);
@@ -193,9 +227,10 @@ void ScreenReceiver::onAllChunksReceived(ImageAssembly &assembly){
 
 void ScreenReceiver::processData(const QByteArray& data) {
     QPixmap frame = decodeImage(data);
-
+    DEBUG("[Video] Decoding image");
     if (frame.isNull()) {
         emit errorOccurred("Failed to decode image");
+        DEBUG("[Video] Failed to decode image");
         return;
     }
 
@@ -212,6 +247,7 @@ QPixmap ScreenReceiver::decodeImage(const QByteArray& data) {
 
 void ScreenReceiver::showFrame(const QPixmap& pixmap) {
     if (m_displayWidget) {
+        DEBUG("[Video] Scaling and outputing");
         // масштабируем под размер виджета с сохранением пропорций
         QPixmap scaled = pixmap.scaled(m_displayWidget->size(),
                                        Qt::KeepAspectRatio,
@@ -220,6 +256,7 @@ void ScreenReceiver::showFrame(const QPixmap& pixmap) {
         m_displayWidget->setPixmap(scaled);
     } else {
         qDebug() << "Display widget is not setted";
+        DEBUG("[Video] Display widget is not setted");
     }
 }
 
@@ -233,4 +270,5 @@ void ScreenReceiver::setSocket(QUdpSocket* socket) {
 
 // идея: внедрить лейбл смотрящий на адрес внутри сервера m_uaddress
 //        кажется на вм m_uaddress меняется на 127
-//        найти где меняется
+//
+// найти где меняется

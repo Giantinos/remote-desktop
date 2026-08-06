@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-eb91e9808b3065acdc54.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Ardis",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Ardis::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Ardis-Debug-55e007a7abaa66838c29.json",
+					"name" : "Ardis",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Ardis_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Ardis_autogen-Debug-832d1591b031cabcc56d.json",
+					"name" : "Ardis_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Ardis_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Ardis_autogen_timestamp_deps-Debug-9184e03f4337d2cf7356.json",
+					"name" : "Ardis_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430",
+		"source" : "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

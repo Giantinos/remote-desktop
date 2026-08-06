@@ -233,6 +233,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.30.5/CMakeSystem.cmake"
   "CMakeFiles/VerifyGlobs.cmake"
   "CMakeFiles/cmake.verify_globs"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/res.qrc"
   )
 
 # The corresponding makefile is:
@@ -244,6 +245,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/Ardis_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/Ardis_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"

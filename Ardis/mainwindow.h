@@ -4,7 +4,7 @@
 #include "senderclient.h"
 #include "receiverobject.h"
 #include <QMainWindow>
-#include "sessionmanager.h"
+#include "common.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,8 +24,12 @@ private:
     Ui::MainWindow *ui;
     SenderClient *senderClient;
     ReceiverObject *receiverObject ;
-    SessionManager *sessionManager;
-    // QPushButton *connectButton;
+    void onServer_N_ClientInactive();
+    // Управляетсясигналами от клиента и сервера
+    void manageUIButtons();
+    bool useManualSettings;
+    // [enable disable]
+    void manageUdpSettings(bool state);
 
 private slots:
     void connectToHost();
@@ -42,6 +46,9 @@ private slots:
     void applyUdpSettings();
     // для разработки
     void checkUdpAddress();
+    void serverStateListener(int status);
+    void clientStateListener(int status);
+
 
 };
 #endif // MAINWINDOW_H

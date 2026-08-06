@@ -77,7 +77,7 @@ QPixmap ScreenHandler::captureScreen(){
         screenshot = scaleImage(screenshot, m_config.resolution);
     }
 
-    qDebug() << ">> Screenshot scaled, sending.";
+    qDebug() << "[Screen] Screenshot scaled, sending.";
     return screenshot;
 }
 
@@ -104,28 +104,10 @@ QVector<DataChunk> ScreenHandler::splitData(const QByteArray &data) {
 void ScreenHandler::sendFrame(const QPixmap& pixmap) {
     QByteArray compressedData = compressImage(pixmap, m_config.quality);
     if (compressedData.isEmpty()) {
-        emit errorOccurred("Failed to compress image");
+        emit errorOccurred("[Screen] Failed to compress image");
+        DEBUG("[Screen] Failed to compress image");
         return;
     }
-
     QVector<DataChunk> dataChunks = splitData(compressedData);
-
-
-    // отправляем через сигнал
-    qDebug() << "Frame compressed!";
-
-    // ReceiverObject подхватывает
     emit frameCaptured(dataChunks);
-
-    // напрямую через сокет (если есть)
-    // if (m_socket) {
-    //     // Протокол: [size (4 bytes)][data]
-    //     QByteArray packet;
-    //     QDataStream stream(&packet, QIODevice::WriteOnly);
-    //     stream << quint32(compressedData.size());
-    //     packet.append(compressedData);
-
-    //     m_socket->write(packet);
-    //     m_socket->flush();
-    // }
 }

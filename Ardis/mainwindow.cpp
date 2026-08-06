@@ -10,27 +10,34 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     // DEBUG
     QTimer *updateUAddressTimer = new QTimer(this);
-    // ///////////////////
+    // Подключение док дебагера к кнопке из тулбара
+    {
+        ui->action_Debug_view->setChecked(false); // По умолчанию виден
+        connect(ui->action_Debug_view, &QAction::toggled,
+                ui->dockWidget_debug, &QDockWidget::setVisible);
+        ui->dockWidget_debug->setVisible(false); // Возвращает QAction*
+    }
+
     ui->pushButton_disconnectClient->setEnabled(false);
     // #### Main Objects ####
     senderClient = new SenderClient(ui->textWidget,this);
     receiverObject = new ReceiverObject(ui->textWidget,this);
-    sessionManager = new SessionManager(senderClient, receiverObject, this,
-                                        ui->textWidget,
-                                        ui->pushButton_sendMessage,
-                                        ui->button_setParameters,
-                                        ui->pushButton_connectToServer,
-                                        ui->pushButton_disconnectFromServer,
-                                        ui->pushButton_disconnectClient,
-                                        ui->pushButton_startServer,
-                                        ui->pushButton_stopServer
-                                        );
+
+    // connect debugs
+    {
+        connect(Common::instance(), &Common::debugSignal,
+                this, [this](const QString m){
+                    ui->plainTextEdit_debug->appendPlainText(m);
+                });
+    }
+    // ///////////////////
+
     // ########
     // DEBUG
     // check udp address
     updateUAddressTimer->start(1000);
     connect(updateUAddressTimer, &QTimer::timeout, this, &MainWindow::checkUdpAddress);
-    // RadioButtons обозначение устройства для отладки (ВМ или хост)
+    // RadioButtons UDP settings обозначение устройства для отладки (ВМ или хост)
     connect(ui->radioButton_virtualMachine, &QRadioButton::toggled,
             this, [&](){
         applyUdpSettings("192.168.0.30", 8001);
@@ -38,6 +45,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->radioButton_host, &QRadioButton::toggled,
             this, [&](){
         applyUdpSettings("127.0.0.1", 8001);
+    });
+    // checkbox udp settings
+    useManualSettings = false;
+    manageUdpSettings(false);
+    connect(ui->checkBox_useManualSettings, &QCheckBox::toggled,
+            this, [this](bool checked){
+        useManualSettings = checked;
+        manageUdpSettings(checked);
     });
     //====Client====
 
@@ -51,11 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_sendMessage, &QPushButton::clicked,
             this, &MainWindow::sendMessage);
     // ---- Set status | Update UI ----
-    connect(senderClient,  &SenderClient::connectionStatusChanged,
-            this, [this]() {
-        ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
-        sessionManager->updateUiState();
-    });
+
     // ---- Disconnect from host ----
     connect(ui->pushButton_disconnectFromServer, &QPushButton::clicked,
             this, &MainWindow::disconnectFromServer);
@@ -80,10 +91,14 @@ MainWindow::MainWindow(QWidget *parent)
     // ====Server====
 
     // ---- Set status | Update UI ----
-    connect(receiverObject, &ReceiverObject::serverStatusChanged, this ,[this](QString message){
+    connect(receiverObject, &ReceiverObject::serverSignalInfo, this ,[this](QString message){
         ui->label_serverStatus->setText(message);
-        sessionManager->updateUiState();
     });
+    // ---- Signal (Server Connection) ----
+    connect(receiverObject, &ReceiverObject::connectionChanged,
+            this, &MainWindow::serverStateListener);
+    connect(senderClient, &SenderClient::connectionChanged,
+            this, &MainWindow::clientStateListener);
     // ---- Warnings ----
     ui->label_serverStatus->setText(receiverObject->getStringServerStatus());
     connect(receiverObject, &ReceiverObject::warning, this, [this](QString message){
@@ -101,6 +116,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pushButton_startServerScreenCast, &QPushButton::clicked, this, &MainWindow::startServerScreencast);
     connect(ui->pushButton_stopScreencast, &QPushButton::clicked, this, &MainWindow::stopScreenCast);
+    serverStateListener(ServerState::STOPPED);
+    clientStateListener(ClientState::DISCONNECTED);
 }
 
 void MainWindow::connectToHost(){
@@ -112,13 +129,22 @@ void MainWindow::disconnectFromServer(){
 }
 
 void MainWindow::setUpHostParameters(){
+    if(!useManualSettings)
+    {
+        applyUdpSettings(ui->lineEdit_ipv4->text(),
+                         ui->lineEdit_udpPort->text().toInt());
+    }
     senderClient->setHostParameters(ui->lineEdit_ipv4->text(),
                                     ui->lineEdit_port->text().toInt());
 }
 
 void MainWindow::sendMessage(){
-    // sessionManager->sendMessage();
-    sessionManager->sendMessage(ui->lineEdit_messageToSend->text());
+    QString message = ui->lineEdit_messageToSend->text();
+    if(receiverObject->getServerStatus() == ServerState::CLIENT_CONNECTED){
+        receiverObject->sendMessage(message);
+    }else if(senderClient->getConnectionStatus() == ClientState::CONNECTED){
+        senderClient->sendMessage(message);
+    }
     ui->lineEdit_messageToSend->clear();
 }
 
@@ -193,4 +219,100 @@ void MainWindow::checkUdpAddress(){
             ui->lineEdit_udpAddress->setText(receiverObject->getUdpAddress().toString());
         }
     }
+}
+
+void MainWindow::clientStateListener(int state){
+    // исправить механизм -↓
+    ui->label_clietnConnection->setText(senderClient->getStringConnectionStatus());
+    //
+    if(receiverObject->getServerStatus() == ServerState::CLIENT_CONNECTED
+        || receiverObject->getServerStatus() == ServerState::STARTED
+        || receiverObject->getServerStatus() == ServerState::INCOMING_CONNECTION)
+    {
+        QMessageBox::warning(this, "Desync application logic", "Server is running!");
+    }
+    if(state == ClientState::CONNECTED
+        || state == ClientState::CONNECTING)
+    {
+        // общее управление с сервером кнопками
+        manageUIButtons();
+        // уникальные управления
+        ui->pushButton_disconnectFromServer->setEnabled(true);
+        ui->pushButton_stopServer->setDisabled(true);
+        if(state == ClientState::CONNECTED){
+            ui->pushButton_sendMessage->setEnabled(true);
+            ui->pushButton_startServerScreenCast->setEnabled(true);
+            ui->pushButton_startMyScreenCast->setEnabled(true);
+            ui->pushButton_stopScreencast->setEnabled(true);
+        }else{
+            ui->pushButton_sendMessage->setDisabled(true);
+            ui->pushButton_startServerScreenCast->setDisabled(true);
+            ui->pushButton_startMyScreenCast->setDisabled(true);
+            ui->pushButton_stopScreencast->setDisabled(true);
+        }
+        return;
+    }
+    onServer_N_ClientInactive();
+}
+
+void MainWindow::serverStateListener(int status){
+    if(senderClient->getConnectionStatus() == ClientState::CONNECTED
+        || senderClient->getConnectionStatus() == ClientState::CONNECTING)
+    {
+        QMessageBox::warning(this, "Desync application logic", "Client is active!");
+    }
+    if(status == ServerState::CLIENT_CONNECTED
+        || status == ServerState::INCOMING_CONNECTION
+        || status == ServerState::STARTED)
+    {
+        // общее управление с клиентом кнопками
+        manageUIButtons();
+        // разблокировка
+        ui->pushButton_disconnectFromServer->setDisabled(true);
+        ui->pushButton_stopServer->setEnabled(true);
+        if(status == ServerState::CLIENT_CONNECTED){
+            ui->pushButton_sendMessage->setEnabled(true);
+            ui->pushButton_startServerScreenCast->setEnabled(true);
+            ui->pushButton_startMyScreenCast->setEnabled(true);
+            ui->pushButton_stopScreencast->setEnabled(true);
+        }else{
+            ui->pushButton_sendMessage->setDisabled(true);
+            ui->pushButton_startServerScreenCast->setDisabled(true);
+            ui->pushButton_startMyScreenCast->setDisabled(true);
+            ui->pushButton_stopScreencast->setDisabled(true);
+        }
+        return;
+    }
+    onServer_N_ClientInactive();
+}
+
+void MainWindow::onServer_N_ClientInactive(){
+    // разблокировка всех кнопок
+    ui->pushButton_disconnectFromServer->setEnabled(true);
+    ui->pushButton_startServer->setEnabled(true);
+    ui->pushButton_connectToServer->setEnabled(true);
+    ui->button_setParameters->setEnabled(true);
+    ui->radioButton_virtualMachine->setEnabled(true);
+    ui->radioButton_host->setEnabled(true);
+    // блокировка кнопок
+    ui->pushButton_sendMessage->setDisabled(true);
+    ui->pushButton_disconnectFromServer->setDisabled(true);
+    ui->pushButton_startServerScreenCast->setDisabled(true);
+    ui->pushButton_startMyScreenCast->setDisabled(true);
+    ui->pushButton_stopScreencast->setDisabled(true);
+}
+
+void MainWindow::manageUIButtons(){
+    ui->pushButton_startServer->setDisabled(true);
+    ui->pushButton_connectToServer->setDisabled(true);
+    ui->button_setParameters->setDisabled(true);
+    ui->radioButton_virtualMachine->setDisabled(true);
+    ui->radioButton_host->setDisabled(true);
+}
+
+void MainWindow::manageUdpSettings(bool state){
+    ui->radioButton_host->setEnabled(state);
+    ui->radioButton_virtualMachine->setEnabled(state);
+    ui->lineEdit_udpAddress->setEnabled(state);
+    // ui->lineEdit_udpPort->setEnabled(state);
 }

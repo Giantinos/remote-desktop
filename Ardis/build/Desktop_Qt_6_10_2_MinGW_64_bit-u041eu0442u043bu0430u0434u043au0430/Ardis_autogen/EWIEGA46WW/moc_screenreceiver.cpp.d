@@ -168,9 +168,11 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/QUdpSocket \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+  C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
   C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
@@ -396,4 +398,5 @@ D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.h \
   D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/screenbase.h

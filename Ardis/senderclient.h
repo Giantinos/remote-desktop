@@ -35,6 +35,7 @@ public:
     QString getWarningMessage();
     QString getStringConnectionStatus();
     void setDisplayWidget(QLabel* display);
+    ScreenReceiver *getScreenReceiverPointer() { return videoStream; };
 
 public slots:
     void disconnectFromHost();
@@ -71,7 +72,7 @@ private:
     int connectionStatus;
     int m_uport = 8001;
     QHostAddress m_uaddress;
-    QString errorMessage;
+    // QString errorMessage;
     QString warningMessage;
     bool isCorrectIp();
     bool isCorrectPort();
@@ -102,10 +103,10 @@ private slots:
 
 signals:
     // сигнал для отображения статуса подключения
-    void connectionStatusChanged(const int status);
+    void connectionChanged(const int status);
     void warning(const QString message);
     void clientEvent(const QString message);
-    void messageReceived(QByteArray data);
+    // void messageReceived(QByteArray data);
     // void sendingMessage(QString message);
 };
 

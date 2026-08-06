@@ -41,25 +41,23 @@ endif()
 # _directory_contents at C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/*.cpp")
 set(OLD_GLOB
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_mainwindow.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_receiverobject.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_receiverwidget.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_senderclient.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_senderwidget.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/EWIEGA46WW/moc_sessionmanager.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/mocs_compilation.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a-u043cu0438u043du0438u043cu0430u043bu044cu043du043eu0433u043e-u0440u0430u0437u043cu0435u0440u0430/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a-u0441-u043eu0442u043bu0430u0434u043eu0447u043du043eu0439-u0438u043du0444u043eu0440u043cu0430u0446u0438u0435u0439/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_common.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_keyboardcapture.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_receiverobject.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_receiverwidget.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenbase.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenhandler.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_screenreceiver.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_senderclient.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_senderwidget.cpp"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/moc_sessionmanager.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/EWIEGA46WW/qrc_res.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/mocs_compilation.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041fu0440u043eu0444u0438u043bu0438u0440u043eu0432u0430u043du0438u0435/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.cpp"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp"
@@ -87,11 +85,11 @@ endif()
 # _directory_contents at C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/*.h")
 set(OLD_GLOB
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/include/ui_mainwindow.h"
-  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u0412u044bu043fu0443u0441u043a/Ardis_autogen/moc_predefs.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/include/ui_mainwindow.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/moc_predefs.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/iscreencommon.h"
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h"
   "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.h"
@@ -182,6 +180,7 @@ endif()
 # _directory_contents at C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/*.qrc")
 set(OLD_GLOB
+  "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/res.qrc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

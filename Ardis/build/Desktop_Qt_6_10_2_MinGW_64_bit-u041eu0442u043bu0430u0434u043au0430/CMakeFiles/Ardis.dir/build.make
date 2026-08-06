@@ -75,11 +75,19 @@ Ardis_autogen/timestamp: CMakeFiles/Ardis.dir/compiler_depend.ts
 	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/Ardis_autogen.dir/AutogenInfo.json Debug
 	C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/Ardis_autogen/timestamp
 
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/res.qrc
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp: CMakeFiles/Ardis_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/styles.qss
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp: C:/Qt/6.10.2/mingw_64/bin/rcc.exe
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp: C:/Qt/6.10.2/mingw_64/bin/rcc.exe
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for res.qrc"
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/Ardis_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json Debug
+
 CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
 CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj: Ardis_autogen/mocs_compilation.cpp
 CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\Ardis.dir\Ardis_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\Ardis.dir\Ardis_autogen\mocs_compilation.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\Ardis_autogen\mocs_compilation.cpp
 
 CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.i: cmake_force
@@ -94,7 +102,7 @@ CMakeFiles/Ardis.dir/main.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/main.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
 CMakeFiles/Ardis.dir/main.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp
 CMakeFiles/Ardis.dir/main.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ardis.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ardis.dir/main.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/main.cpp.obj -MF CMakeFiles\Ardis.dir\main.cpp.obj.d -o CMakeFiles\Ardis.dir\main.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\main.cpp
 
 CMakeFiles/Ardis.dir/main.cpp.i: cmake_force
@@ -109,7 +117,7 @@ CMakeFiles/Ardis.dir/mainwindow.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/mainwindow.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
 CMakeFiles/Ardis.dir/mainwindow.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp
 CMakeFiles/Ardis.dir/mainwindow.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ardis.dir/mainwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ardis.dir/mainwindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/mainwindow.cpp.obj -MF CMakeFiles\Ardis.dir\mainwindow.cpp.obj.d -o CMakeFiles\Ardis.dir\mainwindow.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\mainwindow.cpp
 
 CMakeFiles/Ardis.dir/mainwindow.cpp.i: cmake_force
@@ -124,7 +132,7 @@ CMakeFiles/Ardis.dir/senderclient.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/senderclient.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
 CMakeFiles/Ardis.dir/senderclient.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/senderclient.cpp
 CMakeFiles/Ardis.dir/senderclient.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ardis.dir/senderclient.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Ardis.dir/senderclient.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/senderclient.cpp.obj -MF CMakeFiles\Ardis.dir\senderclient.cpp.obj.d -o CMakeFiles\Ardis.dir\senderclient.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\senderclient.cpp
 
 CMakeFiles/Ardis.dir/senderclient.cpp.i: cmake_force
@@ -139,7 +147,7 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/receiverobject.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
 CMakeFiles/Ardis.dir/receiverobject.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/receiverobject.cpp
 CMakeFiles/Ardis.dir/receiverobject.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Ardis.dir/receiverobject.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Ardis.dir/receiverobject.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/receiverobject.cpp.obj -MF CMakeFiles\Ardis.dir\receiverobject.cpp.obj.d -o CMakeFiles\Ardis.dir\receiverobject.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.cpp
 
 CMakeFiles/Ardis.dir/receiverobject.cpp.i: cmake_force
@@ -149,21 +157,6 @@ CMakeFiles/Ardis.dir/receiverobject.cpp.i: cmake_force
 CMakeFiles/Ardis.dir/receiverobject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/receiverobject.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\receiverobject.cpp -o CMakeFiles\Ardis.dir\receiverobject.cpp.s
-
-CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: CMakeFiles/Ardis.dir/flags.make
-CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
-CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/sessionmanager.cpp
-CMakeFiles/Ardis.dir/sessionmanager.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Ardis.dir/sessionmanager.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/sessionmanager.cpp.obj -MF CMakeFiles\Ardis.dir\sessionmanager.cpp.obj.d -o CMakeFiles\Ardis.dir\sessionmanager.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.cpp
-
-CMakeFiles/Ardis.dir/sessionmanager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ardis.dir/sessionmanager.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.cpp > CMakeFiles\Ardis.dir\sessionmanager.cpp.i
-
-CMakeFiles/Ardis.dir/sessionmanager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/sessionmanager.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\sessionmanager.cpp -o CMakeFiles\Ardis.dir\sessionmanager.cpp.s
 
 CMakeFiles/Ardis.dir/screenhandler.cpp.obj: CMakeFiles/Ardis.dir/flags.make
 CMakeFiles/Ardis.dir/screenhandler.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
@@ -210,6 +203,51 @@ CMakeFiles/Ardis.dir/screenbase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/screenbase.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\screenbase.cpp -o CMakeFiles\Ardis.dir\screenbase.cpp.s
 
+CMakeFiles/Ardis.dir/common.cpp.obj: CMakeFiles/Ardis.dir/flags.make
+CMakeFiles/Ardis.dir/common.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
+CMakeFiles/Ardis.dir/common.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/common.cpp
+CMakeFiles/Ardis.dir/common.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Ardis.dir/common.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/common.cpp.obj -MF CMakeFiles\Ardis.dir\common.cpp.obj.d -o CMakeFiles\Ardis.dir\common.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.cpp
+
+CMakeFiles/Ardis.dir/common.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ardis.dir/common.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.cpp > CMakeFiles\Ardis.dir\common.cpp.i
+
+CMakeFiles/Ardis.dir/common.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/common.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.cpp -o CMakeFiles\Ardis.dir\common.cpp.s
+
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj: CMakeFiles/Ardis.dir/flags.make
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj: D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/keyboardcapture.cpp
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj -MF CMakeFiles\Ardis.dir\keyboardcapture.cpp.obj.d -o CMakeFiles\Ardis.dir\keyboardcapture.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\keyboardcapture.cpp
+
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ardis.dir/keyboardcapture.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\keyboardcapture.cpp > CMakeFiles\Ardis.dir\keyboardcapture.cpp.i
+
+CMakeFiles/Ardis.dir/keyboardcapture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/keyboardcapture.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\keyboardcapture.cpp -o CMakeFiles\Ardis.dir\keyboardcapture.cpp.s
+
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj: CMakeFiles/Ardis.dir/flags.make
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj: CMakeFiles/Ardis.dir/includes_CXX.rsp
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj: Ardis_autogen/EWIEGA46WW/qrc_res.cpp
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj: CMakeFiles/Ardis.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj -MF CMakeFiles\Ardis.dir\Ardis_autogen\EWIEGA46WW\qrc_res.cpp.obj.d -o CMakeFiles\Ardis.dir\Ardis_autogen\EWIEGA46WW\qrc_res.cpp.obj -c D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\Ardis_autogen\EWIEGA46WW\qrc_res.cpp
+
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\Ardis_autogen\EWIEGA46WW\qrc_res.cpp > CMakeFiles\Ardis.dir\Ardis_autogen\EWIEGA46WW\qrc_res.cpp.i
+
+CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\Ardis_autogen\EWIEGA46WW\qrc_res.cpp -o CMakeFiles\Ardis.dir\Ardis_autogen\EWIEGA46WW\qrc_res.cpp.s
+
 # Object files for target Ardis
 Ardis_OBJECTS = \
 "CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.obj" \
@@ -217,10 +255,12 @@ Ardis_OBJECTS = \
 "CMakeFiles/Ardis.dir/mainwindow.cpp.obj" \
 "CMakeFiles/Ardis.dir/senderclient.cpp.obj" \
 "CMakeFiles/Ardis.dir/receiverobject.cpp.obj" \
-"CMakeFiles/Ardis.dir/sessionmanager.cpp.obj" \
 "CMakeFiles/Ardis.dir/screenhandler.cpp.obj" \
 "CMakeFiles/Ardis.dir/screenreceiver.cpp.obj" \
-"CMakeFiles/Ardis.dir/screenbase.cpp.obj"
+"CMakeFiles/Ardis.dir/screenbase.cpp.obj" \
+"CMakeFiles/Ardis.dir/common.cpp.obj" \
+"CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj" \
+"CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj"
 
 # External object files for target Ardis
 Ardis_EXTERNAL_OBJECTS =
@@ -230,10 +270,12 @@ Ardis.exe: CMakeFiles/Ardis.dir/main.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/mainwindow.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/senderclient.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/receiverobject.cpp.obj
-Ardis.exe: CMakeFiles/Ardis.dir/sessionmanager.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/screenhandler.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/screenreceiver.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/screenbase.cpp.obj
+Ardis.exe: CMakeFiles/Ardis.dir/common.cpp.obj
+Ardis.exe: CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj
+Ardis.exe: CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj
 Ardis.exe: CMakeFiles/Ardis.dir/build.make
 Ardis.exe: C:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a
 Ardis.exe: C:/Qt/6.10.2/mingw_64/lib/libQt6Network.a
@@ -243,7 +285,7 @@ Ardis.exe: C:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a
 Ardis.exe: CMakeFiles/Ardis.dir/linkLibs.rsp
 Ardis.exe: CMakeFiles/Ardis.dir/objects1.rsp
 Ardis.exe: CMakeFiles/Ardis.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Ardis.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Ardis.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Ardis.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -254,6 +296,7 @@ CMakeFiles/Ardis.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles\Ardis.dir\cmake_clean.cmake
 .PHONY : CMakeFiles/Ardis.dir/clean
 
+CMakeFiles/Ardis.dir/depend: Ardis_autogen/EWIEGA46WW/qrc_res.cpp
 CMakeFiles/Ardis.dir/depend: Ardis_autogen/timestamp
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\1_academy_top\5_sem\Diplom\Ardis\Ardis D:\1_academy_top\5_sem\Diplom\Ardis\Ardis D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430 D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430 D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles\Ardis.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Ardis.dir/depend

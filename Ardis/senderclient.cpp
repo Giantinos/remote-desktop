@@ -49,6 +49,7 @@ int SenderClient::getConnectionStatus(){
 
 void SenderClient::connectToHost(){
     qDebug() << ">> Trying connect to host";
+    DEBUG("[Client] Trying connect to host");
     if(this->hostAddress.isEmpty() || this->hostPort < 1){
         emit warning("Ip not set");
         return;
@@ -66,21 +67,20 @@ void SenderClient::connectToHost(){
     qDebug() << "> OK isCorrectPort()";
     qDebug() << ">> Connection Status : " << SenderClient::getStringConnectionStatus();
     if(connectionStatus == ClientState::CONNECTING){
-        qDebug() << "> Invalid Status Error";
         emit warning("Already connecting");
         return;
     }
 
     if(connectionStatus == ClientState::CONNECTED){
-        qDebug() << "> Invalid Status Error";
         emit warning("Already connected");
         return;
     }
-    qDebug() << ">> if(!m_socket) making new one";
     if (!m_socket) {
         qDebug() << "trying to make new QTcpm_socket";
+        DEBUG("[Client] trying to make new QTcp m_socket");
         m_socket = new QTcpSocket(this);
         qDebug() << "Created new m_socket";
+        DEBUG("[Client] socket created");
     }
     qDebug() << "Checking m_socket for (m_socket && m_socket->state() != QTcpm_socket::UnconnectedState)";
     qDebug() << "m_socket > " << m_socket;
@@ -89,6 +89,7 @@ void SenderClient::connectToHost(){
         m_socket->disconnectFromHost();
         m_socket->abort();
         qDebug() << "aborting m_socket";
+        DEBUG("[Client] aborting socket");
         m_socket->deleteLater();
         m_socket = nullptr;
         isServerAuthentificated = false;
@@ -110,8 +111,9 @@ void SenderClient::connectToHost(){
     // connect(m_socket, &QTcpm_socket::stateChanged, this, &SenderClient::onm_socketStateChanged);
 
     connectionStatus = ClientState::CONNECTING;
-    emit connectionStatusChanged(connectionStatus);
+    emit connectionChanged(connectionStatus);
     qDebug() << "Connecting to " << hostAddress << " : " << hostPort;
+    DEBUG("[Client] Connecting to " + hostAddress + " : " + QString::number(hostPort));
     isServerAuthentificated = false;
     m_socket->connectToHost(hostAddress, hostPort);
 
@@ -119,7 +121,7 @@ void SenderClient::connectToHost(){
         if(connectionStatus != ClientState::CONNECTED){
             connectionStatus = ClientState::DISCONNECTED;
 
-            emit connectionStatusChanged(connectionStatus);
+            emit connectionChanged(connectionStatus);
             emit warning("Connection timeout");
 
             if(m_socket){
@@ -139,7 +141,7 @@ void SenderClient::onTcpConnected(){
         if(!isServerAuthentificated){
             m_socket->abort();
             connectionStatus = ClientState::DISCONNECTED;
-            emit connectionStatusChanged(connectionStatus);
+            emit connectionChanged(connectionStatus);
             emit warning("Server did not respond to handshake");
         }
     });
@@ -156,7 +158,7 @@ void SenderClient::onReadyRead(){
             showMessage(QString("Server: %1").arg(SERVER_HANDSHAKE));
             isServerAuthentificated = true;
             connectionStatus = ClientState::CONNECTED;
-            emit connectionStatusChanged(connectionStatus);
+            emit connectionChanged(connectionStatus);
             showMessage("Server authorized.");
         }else{
             qDebug() << "Auth failed. m_socket Aborting";
@@ -229,20 +231,17 @@ bool SenderClient::isCorrectPort(int port){
 //     } else {
 //         emit warning("Connection lost");
 //         connectionStatus = ClientState::DISCONNECTED;
-//         emit connectionStatusChanged(connectionStatus);
+//         emit connectionChanged(connectionStatus);
 //     }
 // }
 
-QString SenderClient::getErrorMessage(){
-    return errorMessage;
-}
 
 void SenderClient::onSocketError(QAbstractSocket::SocketError socketError) {
     Q_UNUSED(socketError);
     qDebug() << QString("m_socket Error: %1").arg(m_socket->errorString());
-    errorMessage = QString("Ошибка сокета: %1").arg(m_socket->errorString());
+    // errorMessage = QString("Ошибка сокета: %1").arg(m_socket->errorString());
     connectionStatus = ClientState::C_ERROR;
-    emit connectionStatusChanged(connectionStatus);
+    emit connectionChanged(connectionStatus);
     emit warning(QString("Socker error %1").arg(m_socket->errorString()));
 }
 
@@ -262,7 +261,7 @@ void SenderClient::disconnectFromHost(){
         emit warning("Connection is not exist");
     }
     connectionStatus = ClientState::DISCONNECTED;
-    emit connectionStatusChanged(connectionStatus);
+    emit connectionChanged(connectionStatus);
 }
 
 void SenderClient::onDisconnected() {
@@ -270,7 +269,7 @@ void SenderClient::onDisconnected() {
     if(!isIntentionalDisconnect){
         qDebug() << ">> NOT Intentional disconnect";
         connectionStatus = ClientState::DISCONNECTED;
-        emit connectionStatusChanged(connectionStatus);
+        emit connectionChanged(connectionStatus);
         emit warning("Host connection lost");
     }else qDebug() << ">> Intentional disconnect!";
     qDebug() << ">> Deleting m_socket memory";
@@ -306,7 +305,7 @@ void SenderClient::sendPacket(const QString& type, const QString &data){
     } else {
         emit warning("Client disconnected");
         connectionStatus = ClientState::DISCONNECTED;
-        emit connectionStatusChanged(connectionStatus);
+        emit connectionChanged(connectionStatus);
     }
 }
 
@@ -414,7 +413,7 @@ void SenderClient::stopUdpListening(){
 
 // UNSAFE check socket
 void SenderClient::writeUdpDatagram(){
-    showMessage("== writing initial udp packet ");
+    showMessage("[Client] writing initial udp packet " + m_uaddress.toString() + ":" + QString::number(m_uport));
     qDebug() << "[Client] writing initial udp packet " << m_uaddress << ":" << m_uport ;
     m_usocket->writeDatagram("VIDEO_INIT",
                                m_uaddress,

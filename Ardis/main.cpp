@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QLocale>
+#include <QFile>
 
 // #include <QLineEdit>
 // #include <QTextEdit>
@@ -12,6 +13,17 @@
 // #include <QTcpSocket>
 // #include <QTcpServer>
 // #include <QMessageBox>
+void applyStylesheet(QApplication &app) {
+    QFile file(":/styles/styles.qss");
+
+    if (file.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(file.readAll());
+        app.setStyleSheet(styleSheet);
+        file.close();
+    } else {
+        qDebug() << "Не удалось загрузить стили";
+    }
+}
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +39,8 @@ int main(int argc, char *argv[])
         }
     }
     MainWindow w;
+    // applyStylesheet(a);
     w.show();
     return QCoreApplication::exec();
 }
+

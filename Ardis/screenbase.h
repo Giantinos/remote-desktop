@@ -6,6 +6,8 @@
 #include <QImage>
 #include <QByteArray>
 #include <QTimer>
+#include <QNetworkInterface>
+#include "common.h"//;
 
 struct ScreenCaptureConfig{
     int fps = 10;

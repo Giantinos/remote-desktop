@@ -360,9 +360,17 @@ CMakeFiles/Ardis.dir/screenbase.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/QNetworkInterface \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qnetworkinterface.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qhostaddress.h \
+ C:/Qt/6.10.2/mingw_64/include/QtNetwork/qabstractsocket.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
+ D:\1_academy_top\5_sem\Diplom\Ardis\Ardis\common.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QBuffer \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qbuffer.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QImageWriter \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qimagewriter.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \

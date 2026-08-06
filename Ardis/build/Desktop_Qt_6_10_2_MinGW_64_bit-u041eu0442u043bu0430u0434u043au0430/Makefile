@@ -200,6 +200,30 @@ Ardis_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis_autogen.dir\build.make CMakeFiles/Ardis_autogen.dir/build
 .PHONY : Ardis_autogen/fast
 
+Ardis_autogen/EWIEGA46WW/qrc_res.obj: Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.obj
+
+# target to build an object file
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.cpp.obj
+
+Ardis_autogen/EWIEGA46WW/qrc_res.i: Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.i
+
+# target to preprocess a source file
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.cpp.i
+
+Ardis_autogen/EWIEGA46WW/qrc_res.s: Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.s
+
+# target to generate assembly for a file
+Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s
+.PHONY : Ardis_autogen/EWIEGA46WW/qrc_res.cpp.s
+
 Ardis_autogen/mocs_compilation.obj: Ardis_autogen/mocs_compilation.cpp.obj
 .PHONY : Ardis_autogen/mocs_compilation.obj
 
@@ -223,6 +247,54 @@ Ardis_autogen/mocs_compilation.s: Ardis_autogen/mocs_compilation.cpp.s
 Ardis_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/Ardis_autogen/mocs_compilation.cpp.s
 .PHONY : Ardis_autogen/mocs_compilation.cpp.s
+
+common.obj: common.cpp.obj
+.PHONY : common.obj
+
+# target to build an object file
+common.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/common.cpp.obj
+.PHONY : common.cpp.obj
+
+common.i: common.cpp.i
+.PHONY : common.i
+
+# target to preprocess a source file
+common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/common.cpp.i
+.PHONY : common.cpp.i
+
+common.s: common.cpp.s
+.PHONY : common.s
+
+# target to generate assembly for a file
+common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/common.cpp.s
+.PHONY : common.cpp.s
+
+keyboardcapture.obj: keyboardcapture.cpp.obj
+.PHONY : keyboardcapture.obj
+
+# target to build an object file
+keyboardcapture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/keyboardcapture.cpp.obj
+.PHONY : keyboardcapture.cpp.obj
+
+keyboardcapture.i: keyboardcapture.cpp.i
+.PHONY : keyboardcapture.i
+
+# target to preprocess a source file
+keyboardcapture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/keyboardcapture.cpp.i
+.PHONY : keyboardcapture.cpp.i
+
+keyboardcapture.s: keyboardcapture.cpp.s
+.PHONY : keyboardcapture.s
+
+# target to generate assembly for a file
+keyboardcapture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/keyboardcapture.cpp.s
+.PHONY : keyboardcapture.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -392,30 +464,6 @@ senderclient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/senderclient.cpp.s
 .PHONY : senderclient.cpp.s
 
-sessionmanager.obj: sessionmanager.cpp.obj
-.PHONY : sessionmanager.obj
-
-# target to build an object file
-sessionmanager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.obj
-.PHONY : sessionmanager.cpp.obj
-
-sessionmanager.i: sessionmanager.cpp.i
-.PHONY : sessionmanager.i
-
-# target to preprocess a source file
-sessionmanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.i
-.PHONY : sessionmanager.cpp.i
-
-sessionmanager.s: sessionmanager.cpp.s
-.PHONY : sessionmanager.s
-
-# target to generate assembly for a file
-sessionmanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/sessionmanager.cpp.s
-.PHONY : sessionmanager.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -431,9 +479,18 @@ help:
 	@echo ... Ardis_autogen
 	@echo ... Ardis_autogen_timestamp_deps
 	@echo ... Ardis
+	@echo ... Ardis_autogen/EWIEGA46WW/qrc_res.obj
+	@echo ... Ardis_autogen/EWIEGA46WW/qrc_res.i
+	@echo ... Ardis_autogen/EWIEGA46WW/qrc_res.s
 	@echo ... Ardis_autogen/mocs_compilation.obj
 	@echo ... Ardis_autogen/mocs_compilation.i
 	@echo ... Ardis_autogen/mocs_compilation.s
+	@echo ... common.obj
+	@echo ... common.i
+	@echo ... common.s
+	@echo ... keyboardcapture.obj
+	@echo ... keyboardcapture.i
+	@echo ... keyboardcapture.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -455,9 +512,6 @@ help:
 	@echo ... senderclient.obj
 	@echo ... senderclient.i
 	@echo ... senderclient.s
-	@echo ... sessionmanager.obj
-	@echo ... sessionmanager.i
-	@echo ... sessionmanager.s
 .PHONY : help
 
 

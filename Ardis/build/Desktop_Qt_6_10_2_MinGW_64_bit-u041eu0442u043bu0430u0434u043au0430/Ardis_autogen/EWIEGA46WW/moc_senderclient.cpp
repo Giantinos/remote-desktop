@@ -40,14 +40,12 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "SenderClient",
-        "connectionStatusChanged",
+        "connectionChanged",
         "",
         "status",
         "warning",
         "message",
         "clientEvent",
-        "messageReceived",
-        "data",
         "disconnectFromHost",
         "sendMessage",
         "text",
@@ -72,7 +70,7 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Signal 'connectionStatusChanged'
+        // Signal 'connectionChanged'
         QtMocHelpers::SignalData<void(const int)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Int, 3 },
         }}),
@@ -84,50 +82,46 @@ template <> constexpr inline auto SenderClient::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SignalData<void(const QString)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 5 },
         }}),
-        // Signal 'messageReceived'
-        QtMocHelpers::SignalData<void(QByteArray)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QByteArray, 8 },
-        }}),
         // Slot 'disconnectFromHost'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'sendMessage'
-        QtMocHelpers::SlotData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 11 },
+        QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 9 },
         }}),
         // Slot 'startServerScreencast'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'stopServerScreencast'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'startScreencast'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'stopScreencast'
-        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'setUdpAddress'
-        QtMocHelpers::SlotData<void(QString)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 17 },
+        QtMocHelpers::SlotData<void(QString)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 15 },
         }}),
         // Slot 'setUdpPort'
-        QtMocHelpers::SlotData<void(int)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 19 },
+        QtMocHelpers::SlotData<void(int)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 17 },
         }}),
         // Slot 'SHOWMES'
-        QtMocHelpers::SlotData<void(QString)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 21 },
+        QtMocHelpers::SlotData<void(QString)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 19 },
         }}),
         // Slot 'getUdpAddress'
-        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'onSocketError'
-        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(23, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 24, 25 },
+        QtMocHelpers::SlotData<void(QAbstractSocket::SocketError)>(21, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 22, 23 },
         }}),
         // Slot 'onDisconnected'
-        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onTcpConnected'
-        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onReadyRead'
-        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'stopUdpListening'
-        QtMocHelpers::SlotData<void()>(29, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -151,32 +145,31 @@ void SenderClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     auto *_t = static_cast<SenderClient *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->connectionStatusChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 0: _t->connectionChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->warning((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 2: _t->clientEvent((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->messageReceived((*reinterpret_cast<std::add_pointer_t<QByteArray>>(_a[1]))); break;
-        case 4: _t->disconnectFromHost(); break;
-        case 5: _t->sendMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 6: _t->startServerScreencast(); break;
-        case 7: _t->stopServerScreencast(); break;
-        case 8: _t->startScreencast(); break;
-        case 9: _t->stopScreencast(); break;
-        case 10: _t->setUdpAddress((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 11: _t->setUdpPort((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 12: _t->SHOWMES((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 13: _t->getUdpAddress(); break;
-        case 14: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
-        case 15: _t->onDisconnected(); break;
-        case 16: _t->onTcpConnected(); break;
-        case 17: _t->onReadyRead(); break;
-        case 18: _t->stopUdpListening(); break;
+        case 3: _t->disconnectFromHost(); break;
+        case 4: _t->sendMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->startServerScreencast(); break;
+        case 6: _t->stopServerScreencast(); break;
+        case 7: _t->startScreencast(); break;
+        case 8: _t->stopScreencast(); break;
+        case 9: _t->setUdpAddress((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 10: _t->setUdpPort((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 11: _t->SHOWMES((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 12: _t->getUdpAddress(); break;
+        case 13: _t->onSocketError((*reinterpret_cast<std::add_pointer_t<QAbstractSocket::SocketError>>(_a[1]))); break;
+        case 14: _t->onDisconnected(); break;
+        case 15: _t->onTcpConnected(); break;
+        case 16: _t->onReadyRead(); break;
+        case 17: _t->stopUdpListening(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 14:
+        case 13:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
@@ -186,13 +179,11 @@ void SenderClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (SenderClient::*)(const int )>(_a, &SenderClient::connectionStatusChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (SenderClient::*)(const int )>(_a, &SenderClient::connectionChanged, 0))
             return;
         if (QtMocHelpers::indexOfMethod<void (SenderClient::*)(const QString )>(_a, &SenderClient::warning, 1))
             return;
         if (QtMocHelpers::indexOfMethod<void (SenderClient::*)(const QString )>(_a, &SenderClient::clientEvent, 2))
-            return;
-        if (QtMocHelpers::indexOfMethod<void (SenderClient::*)(QByteArray )>(_a, &SenderClient::messageReceived, 3))
             return;
     }
 }
@@ -216,20 +207,20 @@ int SenderClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     }
     return _id;
 }
 
 // SIGNAL 0
-void SenderClient::connectionStatusChanged(const int _t1)
+void SenderClient::connectionChanged(const int _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
@@ -244,11 +235,5 @@ void SenderClient::warning(const QString _t1)
 void SenderClient::clientEvent(const QString _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
-}
-
-// SIGNAL 3
-void SenderClient::messageReceived(QByteArray _t1)
-{
-    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
 }
 QT_WARNING_POP

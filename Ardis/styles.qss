@@ -1,0 +1,181 @@
+/* ========== СИНЯЯ МИНИМАЛЬНАЯ ТЕМА (ИСПРАВЛЕННАЯ) ========== */
+
+/* Основной фон - темно-синий */
+QMainWindow, QWidget {
+    background-color: #0D1117;
+}
+
+/* Текст */
+QLabel {
+    color: #E6EDF3;
+}
+
+/* Вкладки */
+QTabWidget::pane {
+    background-color: #161B22;
+    border: 1px solid #30363D;
+}
+
+QTabBar::tab {
+    background-color: #21262D;
+    color: #E6EDF3;
+    padding: 6px 12px;
+}
+
+QTabBar::tab:selected {
+    background-color: #1F6FEB;
+    color: white;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #30363D;
+}
+
+/* Кнопки */
+QPushButton {
+    background-color: #1F6FEB;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #388BFD;
+}
+
+QPushButton:pressed {
+    background-color: #1557B0;
+}
+
+QPushButton:disabled {
+    background-color: #21262D;
+    color: #8B949E;
+}
+
+/* Текстовые поля */
+QLineEdit, QTextEdit {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    border: 1px solid #30363D;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+QLineEdit:focus, QTextEdit:focus {
+    border-color: #1F6FEB;
+}
+
+/* КОМБОБОКСЫ - ИСПРАВЛЕНО */
+QComboBox {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    border: 1px solid #30363D;
+    border-radius: 4px;
+    padding: 4px 6px;
+    min-height: 20px;
+}
+
+QComboBox:focus {
+    border-color: #1F6FEB;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    width: 0px;
+    height: 0px;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 0px;
+    background: transparent;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #161B22;
+    color: #E6EDF3;
+    border: 1px solid #30363D;
+    selection-background-color: #1F6FEB;
+    selection-color: white;
+}
+
+/* Чекбоксы */
+QCheckBox {
+    color: #E6EDF3;
+    spacing: 6px;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #30363D;
+    background-color: #0D1117;
+}
+
+QCheckBox::indicator:hover {
+    border-color: #1F6FEB;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #1F6FEB;
+    border-color: #1F6FEB;
+}
+
+/* Группы */
+QGroupBox {
+    color: #E6EDF3;
+    border: 1px solid #30363D;
+    border-radius: 5px;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 5px;
+    color: #1F6FEB;
+}
+
+/* Таблицы */
+QTableWidget {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    border: 1px solid #30363D;
+    gridline-color: #21262D;
+}
+
+QTableWidget::item:selected {
+    background-color: #1F6FEB;
+}
+
+QHeaderView::section {
+    background-color: #161B22;
+    color: #E6EDF3;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid #30363D;
+}
+
+/* Скроллбары */
+QScrollBar:vertical {
+    background-color: #0D1117;
+    width: 8px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #30363D;
+    border-radius: 4px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #1F6FEB;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}

@@ -43,21 +43,21 @@ void ReceiverObject::initServer(){
     if(isCorrectPort()){
         SHOWMES("== port: ok");
         if (!server->listen(QHostAddress::Any, port)) { // QHostAddress::Any слушает на всех доступных сетевых интерфейсах
-            emit serverStatusChanged("Error starting server");
+            emit serverSignalInfo("Error starting server");
             emit warning(QString("Can`t start server at port %1. Error: %2").arg(port).arg(server->errorString()));
             serverStatus = ServerState::S_ERROR;
             server->deleteLater();
         } else {
             QString listenAddress = server->serverAddress().toString();
             if (listenAddress.isEmpty() || listenAddress == "0.0.0.0") {
-                SHOWMES("== listen all interfaces");
+                SHOWMES("[Server] listen all interfaces");
                 // Если слушает на всех, показываем, на чем реально
                 listenAddress = "All interfaces";
             }
             serverStatus = ServerState::STARTED;
-            emit serverStatusChanged(QString("Server started. Listening %1:%2").arg(listenAddress).arg(port));
+            emit connectionChanged(ServerState::STARTED);
+            emit serverSignalInfo(QString("Server started. Listening %1:%2").arg(listenAddress).arg(port));
             connect(server, &QTcpServer::newConnection, this, &ReceiverObject::onNewConnection);
-
             textWidget->append("Server started. Waiting for connections");
         }
     }
@@ -67,13 +67,15 @@ void ReceiverObject::initServer(){
 // ---- UDP ----
 
 void ReceiverObject::startUdpListening(){
-    qDebug() << ">> startUdpListening()";
+    qDebug() << "[Server] startUdpListening()";
+    DEBUG("[Server] startUdpListening()");
     if(m_usocket->bind(m_uport)){
 
         connect(m_usocket, &QUdpSocket::readyRead,
                 this, &ReceiverObject::onUdpDataReceived);
     }else {
         emit warning("Error: couldnt binding UDP port");
+        DEBUG("Error: couldnt binding UDP port");
     }
 }
 
@@ -87,14 +89,18 @@ void ReceiverObject::stopUdpListening(){
 // рабочий
 void ReceiverObject::writeUdpDatagram(QByteArray& data){
     qDebug() << "Writing datagram ip: " << m_uaddress << ":" << m_uport;
+    DEBUG("Writing datagram ip: " + m_uaddress.toString() + ":" + QString::number(m_uport));
     qint64 sent =  m_usocket->writeDatagram(data,
                              m_uaddress,
                              m_uport);
 
     qDebug() << "Sent bytes:" << sent << "Expected:" << data.size();
+    DEBUG("Sent bytes:" + QString::number( sent)
+          + " Expected:" + QString::number(data.size()));
 
     if (sent == -1) {
         qDebug() << "Send error:" << m_usocket->errorString();
+        DEBUG("Send error: " + m_usocket->errorString());
     }
 }
 // не используется
@@ -108,16 +114,28 @@ void ReceiverObject::writeUdpTest(){
 }
 
 void ReceiverObject::sendChunks(const QVector<DataChunk> &chunks) {
-    for (const auto &chunk : chunks) {
-        QByteArray packet;
-        QDataStream stream(&packet, QIODevice::WriteOnly);
-        stream << chunk.id << chunk.total << chunk.current << chunk.data;
-        ReceiverObject::writeUdpDatagram(packet);
-    }
+    sendNextChunk(chunks, 0);
 }
 
+// рекурсия задержка отправка чанки
+void ReceiverObject::sendNextChunk(const QVector<DataChunk> &chunks, int index){
+    if(index >= chunks.size()){
+        DEBUG("[Server] All chunks sent");
+        return;
+    }
+    const auto& chunk = chunks[index];
+    QByteArray packet;
+    QDataStream stream(&packet, QIODevice::WriteOnly);
+    stream << chunk.id << chunk.total << chunk.current << chunk.data;
+    writeUdpDatagram(packet);
+    QTimer::singleShot(20, this, [this, chunks, index](){
+        sendNextChunk(chunks, index + 1);
+    });
+}
+
+
 void ReceiverObject::onUdpDataReceived(){
-    qDebug() << ">> ReceiverObject::onUdpDataReceived()";
+    qDebug() << "[Server] UDP Data received";
 
     while(m_usocket->hasPendingDatagrams()){
         QByteArray buffer;
@@ -131,8 +149,6 @@ void ReceiverObject::onUdpDataReceived(){
     }
 }
 // ^^^^ UDP ^^^^
-
-
 
 bool ReceiverObject::isCorrectPort(){
     return this->port >= 1 && this->port<= 65535 ? true : false;
@@ -151,9 +167,10 @@ void ReceiverObject::onNewConnection() {
         int clientPort = clientSocket->peerPort();
         textWidget->append(QString("New Client Connected:%1:%2")
                                .arg(clientAddress,QString::number(clientPort)));
-        emit serverStatusChanged(QString("Client connected (%1:%2)")
+        emit serverSignalInfo(QString("Client connected (%1:%2)")
                                      .arg(clientAddress,QString::number(clientPort)));
-        serverStatus = ServerState::CLIENT_CONNECTED;
+        serverStatus = ServerState::INCOMING_CONNECTION;
+        emit connectionChanged(ServerState::INCOMING_CONNECTION);
 
         client = clientSocket;
         connect(client, &QTcpSocket::readyRead,
@@ -185,12 +202,11 @@ void ReceiverObject::onReadyRead() {
 
         if(!clientAuthenticated){
             handshakeProcess(data);
+        }else{
+            // елсе разбор команд в сообщении
+            QString message = QString::fromUtf8(data);
+            signalParse(message);
         }
-
-        // елсе разбор команд в сообщении
-        QString message = QString::fromUtf8(data);
-        signalParse(message);
-
     }
 }
 
@@ -201,12 +217,15 @@ void ReceiverObject::handshakeProcess(QByteArray& data){
         clientAuthenticated = true;
         textWidget->append("Клиент авторизован");
         serverStatus = ServerState::CLIENT_CONNECTED;
+        emit connectionChanged(ServerState::CLIENT_CONNECTED);
         // ================ разве это нужно в стринге?
-        emit serverStatusChanged(getStringServerStatus());
-    } else {
-        client->write("UNKNOWN");
-        client->disconnectFromHost();
+        emit serverSignalInfo(getStringServerStatus());
+        return;
     }
+    client->write("UNKNOWN");
+    client->disconnectFromHost();
+    serverStatus = ServerState::STARTED;
+    emit connectionChanged(ServerState::STARTED);
 }
 
 void ReceiverObject::signalParse(const QString& message){
@@ -243,17 +262,6 @@ void ReceiverObject::handleCommand(const QString& cmd){
                 this, &ReceiverObject::sendChunks);
         textWidget->setText(">> CMD:" + cmd);
         screen->startCapture();
-
-
-        // отправить по тсп CMD:INIT_UDP
-        // sendInitUdpExchange();
-
-        // чтобы начать механизм обмена по udp (клиент отправит инит-пакет)
-
-        // сервер начинает слушать udp
-        // начинает трансляцию
-
-        // клиент начинает слушать юдп
     }else if(cmd == "STOP_SSCREENCAST"){
         //отправить клиенту команду о прекращении слушать юдп
         SHOWMES("[Server] stop screencast");
@@ -277,13 +285,14 @@ void ReceiverObject::onClientDisconnected() {
     if (client) {
         textWidget->append(QString("Client disconnected: %1:%2").arg(client->peerAddress().toString()).arg(client->peerPort()));
         serverStatus = ServerState::STARTED;
-        emit serverStatusChanged("Server is active. Waiting for connections...");
+        emit connectionChanged(ServerState::STARTED);
+        serverStatus = ServerState::STARTED;
+        emit serverSignalInfo("Server is active. Waiting for connections...");
         client->deleteLater(); // Освободить память
         clientAuthenticated = false;
 
         // ---- Слушаем новые подключения снова ----
         initServer();
-        serverStatus = ServerState::STARTED;
     }else {
         emit warning("Client disconnected but not correctly.");
     }
@@ -294,6 +303,7 @@ QString ReceiverObject::getStringServerStatus(){
     switch(serverStatus){
     case ServerState::STOPPED: status = "Server stopped"; break;
     case ServerState::STARTED: status = "Server started"; break;
+    case ServerState::INCOMING_CONNECTION: status = "Incoming connection"; break;
     case ServerState::CLIENT_CONNECTED: status = "Client connected"; break;
     case ServerState::S_ERROR: status = "Error"; break;
     }
@@ -306,7 +316,8 @@ void ReceiverObject::stopServer(){
         if (server && server->isListening()) {
             server->close();
             serverStatus = ServerState::STOPPED;
-            emit serverStatusChanged("Server stopped");
+            connectionChanged(ServerState::STOPPED);
+            emit serverSignalInfo("Server stopped");
             if (textWidget) {
                 textWidget->append("Server stopped.");
             }
@@ -314,18 +325,22 @@ void ReceiverObject::stopServer(){
     };
     if(hasActiveClient()){
         qDebug() << "[Server] has active client";
-            QMessageBox::StandardButton reply;
-            reply = QMessageBox::question(nullptr,
-                                          "Warning",           // Заголовок
-                                          "The server has an active connection. Do you want to disconnect it?",             // Текст
-                                          QMessageBox::Ok | QMessageBox::Cancel);  // Кнопки
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(nullptr,
+                                      "Warning",           // Заголовок
+                                      "The server has an active connection. Do you want to disconnect it?",             // Текст
+                                      QMessageBox::Ok | QMessageBox::Cancel);  // Кнопки
 
-            if (reply == QMessageBox::Ok) {
-                disconnectClient();
-                executeCloseServer();
-            }
+        if (reply == QMessageBox::Ok) {
+            disconnectClient();
+            executeCloseServer();
+        }
+        return;
     }
-    else executeCloseServer();
+    executeCloseServer();
+    if(videoStream->isReceiving()){
+        videoStream->stopReceiving();
+    }
 }
 // крашится при остановке сервера, возможно client не существует
 bool ReceiverObject::hasActiveClient()  {
@@ -341,7 +356,7 @@ void ReceiverObject::disconnectClient(){
         clientAuthenticated = false;
         qDebug() << ">> Changing server status";
         serverStatus = ServerState::STARTED;
-        emit serverStatusChanged("Server started");
+        emit serverSignalInfo("Server started");
 
         // ---- Слушаем новые подключения снова ----
         // initServer();
@@ -349,6 +364,9 @@ void ReceiverObject::disconnectClient(){
         qDebug() << ">> ClientsocketState : " << client->state();
         qDebug() << ">> Throwing Warning";
         emit warning("Client is not connected");
+    }
+    if(videoStream->isReceiving()){
+        videoStream->stopReceiving();
     }
 }
 
@@ -373,9 +391,9 @@ void ReceiverObject::sendPacket(const QString& type, const QString &data){
             client->write(packet.toUtf8());
             client->flush();
         }
-    } else {
-        emit warning("State is disconnected");
+        return;
     }
+    emit warning("State is disconnected");
 }
 
 void ReceiverObject::sendMessage(const QString& text){
@@ -406,4 +424,3 @@ void ReceiverObject::setUdpAddress(QString addr){
         this->m_uaddress.setAddress(addr);
     else emit warning("Invalid address");
 }
-
