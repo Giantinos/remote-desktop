@@ -344,6 +344,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+networkpeer.obj: networkpeer.cpp.obj
+.PHONY : networkpeer.obj
+
+# target to build an object file
+networkpeer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/networkpeer.cpp.obj
+.PHONY : networkpeer.cpp.obj
+
+networkpeer.i: networkpeer.cpp.i
+.PHONY : networkpeer.i
+
+# target to preprocess a source file
+networkpeer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/networkpeer.cpp.i
+.PHONY : networkpeer.cpp.i
+
+networkpeer.s: networkpeer.cpp.s
+.PHONY : networkpeer.s
+
+# target to generate assembly for a file
+networkpeer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Ardis.dir\build.make CMakeFiles/Ardis.dir/networkpeer.cpp.s
+.PHONY : networkpeer.cpp.s
+
 receiverobject.obj: receiverobject.cpp.obj
 .PHONY : receiverobject.obj
 
@@ -497,6 +521,9 @@ help:
 	@echo ... mainwindow.obj
 	@echo ... mainwindow.i
 	@echo ... mainwindow.s
+	@echo ... networkpeer.obj
+	@echo ... networkpeer.i
+	@echo ... networkpeer.s
 	@echo ... receiverobject.obj
 	@echo ... receiverobject.i
 	@echo ... receiverobject.s

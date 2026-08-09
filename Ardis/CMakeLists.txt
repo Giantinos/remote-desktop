@@ -41,6 +41,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         common.h common.cpp
         res.qrc
         keyboardcapture.h keyboardcapture.cpp
+        networkpeer.h networkpeer.cpp
 
 
 

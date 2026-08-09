@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Ardis.dir/main.cpp.obj.d"
   "CMakeFiles/Ardis.dir/mainwindow.cpp.obj"
   "CMakeFiles/Ardis.dir/mainwindow.cpp.obj.d"
+  "CMakeFiles/Ardis.dir/networkpeer.cpp.obj"
+  "CMakeFiles/Ardis.dir/networkpeer.cpp.obj.d"
   "CMakeFiles/Ardis.dir/receiverobject.cpp.obj"
   "CMakeFiles/Ardis.dir/receiverobject.cpp.obj.d"
   "CMakeFiles/Ardis.dir/screenbase.cpp.obj"

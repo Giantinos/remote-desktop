@@ -403,17 +403,17 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_startServerScreenCast">
+   <widget class="QPushButton" name="pushButton_startRemoteScreenCast">
     <property name="geometry">
      <rect>
-      <x>496</x>
+      <x>479</x>
       <y>460</y>
-      <width>101</width>
+      <width>121</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Server screencast</string>
+     <string>Remote screencast</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_startMyScreenCast">

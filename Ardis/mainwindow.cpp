@@ -114,10 +114,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ==== Screencast ====
 
-    connect(ui->pushButton_startServerScreenCast, &QPushButton::clicked, this, &MainWindow::startServerScreencast);
-    connect(ui->pushButton_stopScreencast, &QPushButton::clicked, this, &MainWindow::stopScreenCast);
+    connect(ui->pushButton_startRemoteScreenCast, &QPushButton::clicked, this, &MainWindow::startRemoteScreencast);
+    connect(ui->pushButton_stopScreencast, &QPushButton::clicked, this, &MainWindow::stopScreencast);
     serverStateListener(ServerState::STOPPED);
     clientStateListener(ClientState::DISCONNECTED);
+
+    // ==== Keyboard ====
+    keyboard = new KeyboardCapture(this);
 }
 
 void MainWindow::connectToHost(){
@@ -168,7 +171,7 @@ MainWindow::~MainWindow()
 
 // трансяция экрана
 
-void MainWindow::startMyScreenCast(){
+void MainWindow::startMyScreencast(){
     /*
     если трансляция уже запущена
     то выход
@@ -184,12 +187,16 @@ void MainWindow::startMyScreenCast(){
     }
 }
 
-void MainWindow::startServerScreencast(){
-    senderClient->startServerScreencast();
+void MainWindow::startRemoteScreencast(){
+    senderClient->startScreencast();
+    if(isKeyboardCapture){
+        keyboard->startCapture();
+    }
 }
 // добавить получение статусов видеопотока у клиента и сервера
-void MainWindow::stopScreenCast(){
+void MainWindow::stopScreencast(){
     senderClient->stopServerScreencast();
+    keyboard->stopCapture();
 }
 
 void MainWindow::applyUdpSettings(QString address, int port){
@@ -241,12 +248,12 @@ void MainWindow::clientStateListener(int state){
         ui->pushButton_stopServer->setDisabled(true);
         if(state == ClientState::CONNECTED){
             ui->pushButton_sendMessage->setEnabled(true);
-            ui->pushButton_startServerScreenCast->setEnabled(true);
+            ui->pushButton_startRemoteScreenCast->setEnabled(true);
             ui->pushButton_startMyScreenCast->setEnabled(true);
             ui->pushButton_stopScreencast->setEnabled(true);
         }else{
             ui->pushButton_sendMessage->setDisabled(true);
-            ui->pushButton_startServerScreenCast->setDisabled(true);
+            ui->pushButton_startRemoteScreenCast->setDisabled(true);
             ui->pushButton_startMyScreenCast->setDisabled(true);
             ui->pushButton_stopScreencast->setDisabled(true);
         }
@@ -272,12 +279,12 @@ void MainWindow::serverStateListener(int status){
         ui->pushButton_stopServer->setEnabled(true);
         if(status == ServerState::CLIENT_CONNECTED){
             ui->pushButton_sendMessage->setEnabled(true);
-            ui->pushButton_startServerScreenCast->setEnabled(true);
+            ui->pushButton_startRemoteScreenCast->setEnabled(true);
             ui->pushButton_startMyScreenCast->setEnabled(true);
             ui->pushButton_stopScreencast->setEnabled(true);
         }else{
             ui->pushButton_sendMessage->setDisabled(true);
-            ui->pushButton_startServerScreenCast->setDisabled(true);
+            ui->pushButton_startRemoteScreenCast->setDisabled(true);
             ui->pushButton_startMyScreenCast->setDisabled(true);
             ui->pushButton_stopScreencast->setDisabled(true);
         }
@@ -297,7 +304,7 @@ void MainWindow::onServer_N_ClientInactive(){
     // блокировка кнопок
     ui->pushButton_sendMessage->setDisabled(true);
     ui->pushButton_disconnectFromServer->setDisabled(true);
-    ui->pushButton_startServerScreenCast->setDisabled(true);
+    ui->pushButton_startRemoteScreenCast->setDisabled(true);
     ui->pushButton_startMyScreenCast->setDisabled(true);
     ui->pushButton_stopScreencast->setDisabled(true);
 }

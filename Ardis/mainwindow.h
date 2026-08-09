@@ -3,6 +3,7 @@
 
 #include "senderclient.h"
 #include "receiverobject.h"
+#include "keyboardcapture.h"
 #include <QMainWindow>
 #include "common.h"
 
@@ -22,14 +23,17 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    SenderClient *senderClient;
-    ReceiverObject *receiverObject ;
+    SenderClient *senderClient = nullptr;
+    ReceiverObject *receiverObject = nullptr;
+    KeyboardCapture *keyboard = nullptr;
+    bool isKeyboardCapture = false;
     void onServer_N_ClientInactive();
     // Управляетсясигналами от клиента и сервера
     void manageUIButtons();
     bool useManualSettings;
     // [enable disable]
     void manageUdpSettings(bool state);
+
 
 private slots:
     void connectToHost();
@@ -39,9 +43,10 @@ private slots:
     void disconnectFromServer();
     void disconnectClient();
     void stopServer();
-    void startMyScreenCast();
-    void startServerScreencast();
-    void stopScreenCast();
+    // общий метод для остановки трансляции и инструментов
+    void startMyScreencast();
+    void startRemoteScreencast();
+    void stopScreencast();
     void applyUdpSettings(QString address, int port);
     void applyUdpSettings();
     // для разработки

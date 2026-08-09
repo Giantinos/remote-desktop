@@ -432,6 +432,12 @@
 			null
 		],
 		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/networkpeer.h",
+			"MU",
+			"EWIEGA46WW/moc_networkpeer.cpp",
+			null
+		],
+		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/params.h",
 			"MU",
 			"EWIEGA46WW/moc_params.cpp",
@@ -551,6 +557,11 @@
 		[ "D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/main.cpp", "MU", null ],
 		[
 			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/1_academy_top/5_sem/Diplom/Ardis/Ardis/networkpeer.cpp",
 			"MU",
 			null
 		],

@@ -39,7 +39,6 @@ protected:
 
 private slots:
     void onKeyHoldTimer();
-    void onKeyReleaseTimer();
 
 private:
     // методы обработки
@@ -53,6 +52,7 @@ private:
     void sendKeyPress(int keyCode, Qt::KeyboardModifiers mods);
     void sendKeyRelease(int keyCode);
     void sendCombination(const QSet<int>& keys);
+
 
 private:
     // состояния захвата

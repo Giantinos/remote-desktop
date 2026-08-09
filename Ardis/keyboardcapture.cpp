@@ -159,9 +159,3 @@ void KeyboardCapture::onKeyHoldTimer(){
         emit keyHold(m_holdKeyCode, durationMs);
     }
 }
-
-
-
-void KeyboardCapture::onKeyReleaseTimer(){
-
-}
