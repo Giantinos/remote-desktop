@@ -349,6 +349,22 @@ void SenderClient::handleChatMessage(const QString& message){
     textWidget->append(QString("%1:%2> %3").arg(clientAddress).arg(clientPort).arg(message));
 }
 
+// keyboard клавиатура
+void SenderClient::sendKeyboardPress(const QString keys){
+    sendPacket("KBC", keys);
+}
+
+// void SenderClient::sendKeyHoldDuration(const int keyCode, const int duration){
+//     sendPacket("KBC", );
+// }
+void SenderClient::sendKeyCombination(const QString combination){
+    sendPacket("KBC", combination);
+}
+
+void SenderClient::sendKeyReleased(const QString keyCode){
+    sendPacket("KBC", keyCode);
+}
+
 void SenderClient::handleCommand(const QString& cmd){
     showMessage("[Client] handling " + cmd);
     qDebug() << "[Client] handling " + cmd;

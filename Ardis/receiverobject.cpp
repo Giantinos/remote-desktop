@@ -411,6 +411,9 @@ void ReceiverObject::startScreencast(){
 void ReceiverObject::stopScreencast(){
     sendPacket("CMD", "STOP_CSCREENCAST");
 }
+void ReceiverObject::sendKeyboardControls(const QString& keys){
+    sendPacket("KBC", keys);
+}
 
 void ReceiverObject::setUdpPort(int l_port){
     if(isCorrectPort(l_port))

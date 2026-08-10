@@ -33,6 +33,8 @@ private:
     bool useManualSettings;
     // [enable disable]
     void manageUdpSettings(bool state);
+    // всевозможные настройки связанные с KeyCapture
+    void keyboardSettings();
 
 
 private slots:

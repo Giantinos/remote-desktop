@@ -43,6 +43,7 @@ public slots:
     void startScreencast();
     void stopScreencast();
     void setUdpAddress(QString addr);
+    void sendKeyboardControls(const QString& keys);
     // для разработки
     QHostAddress& getUdpAddress(){
         return m_uaddress;

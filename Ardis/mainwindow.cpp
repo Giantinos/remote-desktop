@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     // #### Main Objects ####
     senderClient = new SenderClient(ui->textWidget,this);
     receiverObject = new ReceiverObject(ui->textWidget,this);
+    keyboard = new KeyboardCapture(this);
 
     // connect debugs
     {
@@ -120,7 +121,31 @@ MainWindow::MainWindow(QWidget *parent)
     clientStateListener(ClientState::DISCONNECTED);
 
     // ==== Keyboard ====
-    keyboard = new KeyboardCapture(this);
+    keyboardSettings();
+    // ----  ----
+}
+//  обертка для
+void MainWindow::keyboardSettings(){
+    // надо домутить преобразование данных в строку в захватеклавы
+    // нажатие клавиши с модификаторами
+    connect(keyboard, &KeyboardCapture::keyPressed,
+            this, [this](QString& keys){
+        senderClient->sendKeyboardPress(keys);
+    });
+    // удержание кклавиши
+    // connect(keyboard, &KeyboardCapture::keyHold,
+    //        this, [this](int keyCode, int duration){
+    //     senderClient->sendKeyHoldDuration(keyCode, duration);
+    // });
+    // комбинация клавиш
+    connect(keyboard, &KeyboardCapture::keyCombination,
+             this,[this](const QString& combination){
+        senderClient->sendKeyCombination(combination);
+    } );
+    connect(keyboard, &KeyboardCapture::keyReleased,
+            this, [this](const int keyCode){
+        senderClient->sendKeyReleased(keyCode);
+    });
 }
 
 void MainWindow::connectToHost(){

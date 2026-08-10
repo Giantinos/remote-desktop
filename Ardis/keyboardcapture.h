@@ -23,10 +23,10 @@ public:
 
 signals:
     // сигналы для отправки по сети
-    void keyPressed(int keyCode, bool ctrl,bool shift,bool alt);
-    void keyReleased(int keyCode);
-    void keyCombination(const QSet<int>& keys);
-    void keyHold(int keyCode, int durationMS);
+    void keyPressed(const QString keys);
+    void keyReleased(const QString keyCode);
+    void keyCombination(const QString combination);
+    // void keyHold(const QString holdData);
 
     // сигналы для UI
     void captureStarted();
@@ -38,20 +38,23 @@ protected:
     bool eventFilter(QObject* obj, QEvent* event) override;
 
 private slots:
-    void onKeyHoldTimer();
+    // void onKeyHoldTimer();
 
 private:
     // методы обработки
     void processKeyPress(QKeyEvent* vent);
     void processKeyRelease(QKeyEvent* vent);
     void checkCombination();
-    void startHoldTimer(int keyCode);
-    void stopHoldTimer();
+    // void startHoldTimer(int keyCode);
+    // void stopHoldTimer();
 
     // отправка данных
     void sendKeyPress(int keyCode, Qt::KeyboardModifiers mods);
+    void keyPressToString(int keyCode, int ctrl,int shift,int alt, QString& out);
     void sendKeyRelease(int keyCode);
+    QString keyReleaseToString(int keyCode);
     void sendCombination(const QSet<int>& keys);
+    QString keyCombinationToString(const QSet<int>& keys);
 
 
 private:
@@ -63,18 +66,18 @@ private:
     // хранение клавиш
     QSet<int> m_pressedKeys;
     QSet<int> m_combinationKeys;
-    QMap<int, qint64> m_keyPressTime;
+    // QMap<int, qint64> m_keyPressTime;
 
     // таймер для длительности нажатия
-    QTimer* m_holdTimer = nullptr;
-    int m_holdKeyCode = 0;
-    qint64 m_holdStartTime = 0;
+    // QTimer* m_holdTimer = nullptr;
+    // int m_holdKeyCode = 0;
+    // qint64 m_holdStartTime = 0;
 
     // таймер для задержки отправки комбинаций
-    QTimer* m_combinationDelayTimer = nullptr;
-    QSet<int> m_pendingCombination;
+    // QTimer* m_combinationDelayTimer = nullptr;
+    // QSet<int> m_pendingCombination;
 
-    Qt::KeyboardModifiers m_currentModifiers = Qt::NoModifier;
+    // Qt::KeyboardModifiers m_currentModifiers = Qt::NoModifier;
 
 };
 

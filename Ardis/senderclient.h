@@ -44,6 +44,12 @@ public slots:
     void stopServerScreencast();
     void startScreencast();
     void stopScreencast();
+    // отправка клавишь
+    void sendKeyboardPress(const QString keys);
+    // void sendKeyHoldDuration(const int keyCode, const int duration);
+    void sendKeyCombination(const QString combination);
+    void sendKeyReleased(const QString keyCode);
+    // ------------------------
     void setUdpAddress(QString address){
         QHostAddress a(address);
         if(!a.isNull() && a.protocol() == QAbstractSocket::IPv4Protocol)
